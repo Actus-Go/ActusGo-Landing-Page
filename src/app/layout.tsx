@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import favIcon from "@/../public/actusGo.png";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title?.toString()}</title>
+        <meta name="description" content={metadata.description ?? ""} />
+        <link rel="icon" href={favIcon.src} />
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
