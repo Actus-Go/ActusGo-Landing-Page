@@ -16,7 +16,7 @@ export default function Home() {
 
       <h1 className='text-4xl font-bold text-center text-neutral-900 dark:text-neutral-100 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
         {" "}
-        Cooming Soon...
+        Coming Soon...
       </h1>
       <div className='grid place-items-center relative'>
         <div className='mb-32 grid  text-center lg:mb-0 lg:max-w-5xl lg:grid-cols-2 lg:text-left'>
