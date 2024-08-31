@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Button from "./Micros/button";
-import ButtonLite from "./Micros/buttonLite";
+import ButtonLite from "./Micros/ButtonLite";
 import { Link } from "react-router-dom";
 
 export default function Hero_2() {
