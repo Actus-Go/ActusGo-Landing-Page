@@ -3,7 +3,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import DarkModeSwitcher from "../DarkModeSwitcher";
 import SocialMediaLinks from "./SocialMediaLinks";
 import LINKS from "./FooterLinks";
-import Logo from "../header/Logo";
+// import Logo from "../header/Logo";
 
 const CurrentYear = new Date().getFullYear();
 
