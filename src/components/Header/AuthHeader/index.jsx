@@ -1,5 +1,3 @@
-// src/components/Header.js
-import Logo from "../../logo";
 
 const AuthHeader = () => {
   return (
@@ -8,7 +6,7 @@ const AuthHeader = () => {
         aria-label='Global'
         className='mx-auto w-full  flex max-w-[1400px] items-center justify-between p-6 lg:px-8'>
         <div className='flex  lg:flex-1'>
-          <Logo />
+          {/* <Logo /> */}
         </div>
         <div className=" justify-end flex ">
           <div className='relative text-center bg-gray-500/30 rounded-lg grid place-items-center m-auto'>

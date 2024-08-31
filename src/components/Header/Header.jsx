@@ -1,6 +1,6 @@
 // src/components/Header.js
 import { useState } from "react";
-import Logo from "./Logo";
+// import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 import { Bars3Icon } from "@heroicons/react/24/outline";
