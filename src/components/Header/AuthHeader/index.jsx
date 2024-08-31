@@ -1,5 +1,5 @@
 // src/components/Header.js
-import Logo from "../logo";
+import Logo from "../../logo";
 
 const AuthHeader = () => {
   return (
