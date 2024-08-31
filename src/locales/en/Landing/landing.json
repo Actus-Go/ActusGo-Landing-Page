@@ -1,0 +1,95 @@
+{
+  "new_announce": "Exclusive Offer for a Limited Time",
+  "cta_line_1": "Save on every purchase!",
+  "cta_line_2": "Start Now",
+  "hero_section": {
+    "hero_heading": "Turning the Shopping Experience ",
+    "sub_heading_text": "into an Adventure",
+    "description": "adding the fun into your daily life while saving on every purchase you do!",
+    "cta": "Sign Up Now",
+    "button_lite_cta": "For Merchants",
+    "news_title": "Don't Miss Out",
+    "news_content": "Get exclusive offers for a limited time and start saving today!"
+  },
+  "use_cases": {
+    "section": {
+      "content": [
+        {
+          "badge": "Why Us"
+        },
+        {
+          "text": "Turning reality into a game",
+          "highlight": "with challenges and rewards",
+          "continue": ""
+        }
+      ],
+      "cards": [
+        {
+          "badge": "Fun Challenges",
+          "title": "Challenges and Missions ",
+          "description": "Accept challenges and complete missions to earn exclusive rewards and coupons."
+        },
+        {
+          "badge": "Exceptional Experience",
+          "title": "Augmented Reality",
+          "description": "Experience augmented reality where coupons appear in real life and you need to catch them."
+        },
+        {
+          "badge": "Actus Go Map",
+          "title": "All Offers in One Place",
+          "description": "Discover nearby offers and challenges through the Actus Go map."
+        }
+      ]
+    }
+  },
+  "grid_section": {
+    "head": {
+      "badge": "Discover More",
+      "title": {
+        "text": "why you will ",
+        "highlight": "love us",
+        "continue": ""
+      },
+      "text": "At Actus Go, we aim to make saving a fun daily habit."
+    },
+    "cards": [
+      {
+        "title": "Challenges and Missions",
+        "text": "Complete challenges and missions to earn more coupons and offers."
+      },
+      {
+        "title": "Augmented Reality Experience",
+        "text": "Catch coupons in the real world using augmented reality."
+      },
+      {
+        "title": "Actus Go Map",
+        "text": "Discover offers and challenges near you."
+      },
+      {
+        "title": "Daily Savings",
+        "text": "Make saving a fun daily habit."
+      },
+      {
+        "title": "Exclusive Rewards",
+        "text": "Get exclusive rewards from Actus Go."
+      }
+    ],
+    "cta_text_below": "Ready for an adventure?",
+    "button_text": "Start Now"
+  },
+  "process_steps": {
+    "process_steps_heading": {
+      "text": "How to Start",
+      "highlight": "Your Journey with Actus Go",
+      "continue": "for Savings and Fun"
+    },
+    "process_steps_1": "Sign Up Now",
+    "process_steps_1_description": "Register and complete your profile to start your savings journey.",
+    "process_steps_2": "Explore Offers",
+    "process_steps_2_description": "Browse coupons and accept challenges to increase your savings.",
+    "process_steps_3": "Invite Friends",
+    "process_steps_3_description": "Invite your friends to get bigger discounts and exclusive coupons.",
+    "process_steps_4": "Start the Adventure",
+    "process_steps_4_description": "Complete challenges and use the coupons you've earned."
+  }
+}
