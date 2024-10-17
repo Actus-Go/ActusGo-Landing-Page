@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useTranslation } from "react-i18next";
 import analysis from "../assets/images/3verticalCards/analysis.png";
 import availability from "../assets/images/3verticalCards/availability.png";
@@ -40,7 +40,7 @@ function TrainingServiceSection() {
       className="w-full min-h-screen max-w-[1400px] flex flex-col gap-8 text-white dark:text-gray-300"
       id="marketplace"
     >
-      <div className="head container mx-auto flex flex-col gap-7 justify-center text-center max-w-[800px] pt-5">
+      <div className="head px-3 container mx-auto flex flex-col gap-7 justify-center text-center max-w-[800px] pt-5">
         <h1 className="md:text-2xl grid place-items-center text-xl md:text-center text-start font-medium text-yellow-800 uppercase dark:text-yellow-400">
           {" "}
           {t("use_cases.section.content.0.badge")}{" "}
@@ -55,6 +55,10 @@ function TrainingServiceSection() {
           </span>{" "}
           {t("use_cases.section.content.1.continue")}{" "}
         </h1>
+        <p className=" text-gray-800  py-5 text-center text-base md:text-lg dark:text-gray-400 ">
+          {" "}
+          {t("use_cases.section.content.1.discription")}{" "}
+        </p>
       </div>
 
       <div className="content container  mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -79,9 +83,7 @@ function TrainingServiceSection() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <p className="opacity-45 uppercase text-black/60 dark:text-gray-400">
-              Click on the card to learn more
-            </p>
+            
           </div>
         ))}
       </div>

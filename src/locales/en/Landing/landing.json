@@ -11,6 +11,28 @@
     "news_title": "Don't Miss Out",
     "news_content": "Get exclusive offers for a limited time and start saving today!"
   },
+  "BusinessProfitable": {
+    "hero_heading": " Business ",
+    "sub_heading_text": "profitable partner",
+    "description": "In actus go we help business to succeed by delivering to best experience for shoppers , Develop winning strategies to keep ahead of the competition, adding the value business need, For more information, do not hesitate to contact us."
+  },
+  "challenges": [
+    {
+      "title": "Minimum Wage Issue",
+      "description": "The current minimum wage in Jordan, 260 JOD per month, is often insufficient to cover the cost of living, especially in urban areas like Amman.",
+      "icon": "CurrencyDollarIcon"
+    },
+    {
+      "title": "Lack of Luxury Spaces",
+      "description": "Life has become just work to meet basic needs, with a lack of luxury spaces for relaxation and leisure.",
+      "icon": "OfficeBuildingIcon"
+    },
+    {
+      "title": "Affordable Solutions",
+      "description": "Solutions are needed to provide basic needs at affordable prices.",
+      "icon": "LightBulbIcon"
+    }
+  ],
   "use_cases": {
     "section": {
       "content": [
@@ -20,24 +42,25 @@
         {
           "text": "Turning reality into a game",
           "highlight": "with challenges and rewards",
-          "continue": ""
+          "continue": "",
+          "discription": "In actus go we aim to become the user daily habit while what only matter is saving so we add a lot of fun for this process to become more valuable for you."
         }
       ],
       "cards": [
         {
           "badge": "Fun Challenges",
-          "title": "Challenges and Missions ",
-          "description": "Accept challenges and complete missions to earn exclusive rewards and coupons."
+          "title": "Gamified the reality",
+          "description": "Transfer reality into a game Challenges to accept Mission to complete Prizes to win."
         },
         {
           "badge": "Exceptional Experience",
-          "title": "Augmented Reality",
-          "description": "Experience augmented reality where coupons appear in real life and you need to catch them."
+          "title": "Live an immersive experience ",
+          "description": "with AR a world that coupons appear in real life and you should catch it to redeem."
         },
         {
-          "badge": "Actus Go Map",
-          "title": "All Offers in One Place",
-          "description": "Discover nearby offers and challenges through the Actus Go map."
+          "badge": "All Offers in One Place",
+          "title": "Actus Go Map",
+          "description": "all coupons in one place, discover the map to see nearby offers, stores, challenges, people."
         }
       ]
     }

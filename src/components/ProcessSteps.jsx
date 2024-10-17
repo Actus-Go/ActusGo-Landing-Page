@@ -10,7 +10,7 @@ function ProcessStep({ step, isReversed }) {
 
   return (
     <div
-      className={`min-h-[300px] sm:min-h-[400px] grid relative  md:grid-cols-2 gap-8 p-4`}
+      className={`min-h-[200px] sm:min-h-[300px] grid relative  md:grid-cols-2 gap-8 p-4`}
       style={{ textAlign: isRTL ? "right" : "left" }}
     >
       <div
