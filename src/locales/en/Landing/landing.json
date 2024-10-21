@@ -79,30 +79,30 @@
   },
   "sectionsBanners": [
     {
-      "title": "Invest Now!",
+      "title": "Join the Fun, Claim Your Prize!",
       "image": {
         "src": "/public/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
-      "title": "Invest Now!",
+      "title": "Join the Fun, Claim Your Prize!",
       "image": {
         "src": "/public/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
-      "title": "Invest Now!",
+      "title": "Join the Fun, Claim Your Prize!",
       "image": {
         "src": "/public/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
-      "title": "Invest Now!",
+      "title": "Join the Fun, Claim Your Prize!",
       "image": {
-     "src": "/public/ActusGoLogo.png",
+        "src": "/public/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     }
@@ -151,24 +151,24 @@
     },
     "cards": [
       {
-        "title": "Challenges and Missions",
-        "text": "Complete challenges and missions to earn more coupons and offers."
+        "title": "Points",
+        "text": "Earn points by completing tasks and challenges, tracking your progress and boosting engagement."
       },
       {
-        "title": "Augmented Reality Experience",
-        "text": "Catch coupons in the real world using augmented reality."
+        "title": "Badges & Achievements",
+        "text": "Unlock unique badges and achievements to mark milestones, celebrate successes, and encourage personal growth."
       },
       {
-        "title": "Actus Go Map",
-        "text": "Discover offers and challenges near you."
+        "title": "Leaderboards",
+        "text": "Compete with others by climbing the leaderboard, driving healthy competition and recognizing top performers."
       },
       {
-        "title": "Daily Savings",
-        "text": "Make saving a fun daily habit."
+        "title": "Challenges & Quests",
+        "text": "Take part in exciting challenges and immersive quests, adding fun and accomplishment to your journey."
       },
       {
-        "title": "Exclusive Rewards",
-        "text": "Get exclusive rewards from Actus Go."
+        "title": "Progress Bars & Levels",
+        "text": "Track your growth with progress bars and unlock new levels, offering motivation and a clear sense of advancement."
       }
     ],
     "cta_text_below": "Ready for an adventure?",

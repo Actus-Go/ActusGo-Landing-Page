@@ -10,6 +10,7 @@ import advertising from "../assets/images/5GridImages/advertising.png";
 
 const GridSection = () => {
   const { t, i18n } = useTranslation("landing");
+  
   const isRTL = i18n.language === "ar";
 
   const cardsData = [
@@ -42,18 +43,19 @@ const GridSection = () => {
 
   return (
     <div
-      className={`w-full px-4 flex flex-col min-h-screen max-w-[1400px] justify-center items-center gap-8 dark:text-white text-black ${isRTL ? "rtl" : ""}`}
+      className={`w-full px-4 flex flex-col min-h-screen max-w-[1400px] ${isRTL ? "text-start" : ""} justify-center items-center gap-8 dark:text-white text-black ${isRTL ? "rtl" : ""}`}
       id="features"
+      dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="container mx-auto flex flex-col gap-7 justify-center items-center text-center max-w-[800px] pt-5">
         {/* Heading Section */}
         <div
-          className={`text-3xl max-w-[1000px] text-center md:text-4xl lg:text-5xl xl:text-6xl font-semibold dark:text-gray-300 `}
+          className={`text-3xl max-w-[1000px] text-center  md:text-4xl lg:text-5xl xl:text-6xl font-semibold dark:text-gray-300 `}
         >
           <h1 className="md:text-2xl grid place-items-center text-xl md:text-center text-start font-medium text-yellow-800 uppercase dark:text-yellow-400">
             {t("grid_section.head.badge")}
           </h1>
-          <h1 className="text-center">
+          <h1 className="">
             {" "}
             {t("grid_section.head.title.text")}{" "}
             <span className="bg-gradient-to-r text-center from-yellow-700 to-blue-800 text-transparent bg-clip-text dark:from-yellow-500 dark:to-yellow-700">
@@ -80,8 +82,8 @@ const GridSection = () => {
             key={index}
             className={`hover:scale-[1.03] cursor-pointer transition-all ${index <= 1 ? "col-span-2 lg:col-span-3" : "col-span-2"} overflow-hidden dark:bg-yellow-800/10 border-2 border-yellow-600/20 bg-yellow-100/60 rounded-3xl h-[375px] text-left flex flex-col justify-between`}
           >
-            <div className="p-5 flex flex-col gap-1">
-              <h1 className="text-2xl">{title}</h1>
+            <div className={`p-5 ${isRTL ? "text-start" : ""} flex flex-col gap-1`}>
+              <h1 className={` text-2xl`}>{title}</h1>
               <p className="dark:text-white/50 text-black/50 text-[14px]">
                 {text}
               </p>

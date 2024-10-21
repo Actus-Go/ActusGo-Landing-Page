@@ -47,16 +47,16 @@ const FAQSection = () => {
 
     return (
         <div
-            className={`flex flex-col max-lg:items-center max-w-[1400px] lg:flex-row justify-center gap-8 py-3 mx-auto px-6 md:p-8 mt-6 ${
+            className={`flex flex-col max-lg:items-center max-w-[1400px]  lg:flex-row justify-center gap-8 py-3 mx-auto px-6 md:p-8 mt-6 ${
                 isRTL ? 'text-right' : 'text-left'
             }`}
             dir={isRTL ? 'rtl' : 'ltr'}
         >
-            <div className="flex flex-col gap-4 md:max-w-lg">
-                <p className="text-[#c6cc28]  font-bold text-lg">
+            <div className="flex flex-col justify-center items-center md:justify-start md:items-start gap-4 md:max-w-lg">
+                <p className="text-[#c6cc28] text-center font-bold text-lg">
                     {t('faq.title')}
                 </p>
-                <h2 className="text-3xl max-w-[300px] dark:text-white font-bold mb-6">
+                <h2 className="text-3xl  text-center md:text-start max-w-[300px] dark:text-white font-bold mb-6">
                     {t('faq.subtitle')}
                 </h2>
             </div>

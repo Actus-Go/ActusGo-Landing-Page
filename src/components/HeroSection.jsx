@@ -30,7 +30,7 @@ const Header80 = (props) => {
         "text-right": isRTL, // Align text to the right for Arabic
       })}
     >
-      <div className="sticky top-0 h-[100vh] container mx-auto overflow-hidden">
+      <div className="sticky top-0 h-[100vh]  overflow-hidden">
         <div className="absolute bottom-0 left-0 top-0 z-10">
           <motion.div className="flex flex-col gap-[26vw] pt-[70vh]" style={{ y: yFirst }}>
             {images.slice(0, 4).map((image, index) => (
@@ -66,7 +66,7 @@ const Header80 = (props) => {
         </motion.div>
 
         {/* Main content centered vertically and horizontally */}
-        <div className="container relative flex h-full max-w-[1400px] items-center justify-center">
+        <div className="container relative flex h-full  items-center justify-center">
           <div className="text-center">
             <h1 className="mb-5 text-4xl font-bold dark:text-white md:text-6xl">{heading}</h1>
             <p className="mb-8 dark:text-white/90">{description}</p>
@@ -76,7 +76,7 @@ const Header80 = (props) => {
                 <Button
                   color="gray"
                   CTAtext={t("hero_section.cta")}
-                  className="w-40 h-12    text-black  dark:text-black rounded">
+                  className="h-12 w-[200px]  text-black  dark:text-black rounded">
                   {t("hero_section.cta")}
                 </Button>
               </Link>

@@ -15,8 +15,8 @@ const Banner15 = () => {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Left and right glassy gradient for shadow effect */}
-      <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-gray-300/80 dark:from-gray-900/80 to-transparent pointer-events-none" />
-      <div className="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-gray-300/80 dark:from-gray-900/80 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 z-10  h-full w-[40px] bg-gradient-to-r from-[#fbfae9] dark:from-black/80 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 z-10 h-full w-[40px] bg-gradient-to-l from-[#fbfae9] dark:from-black/80 to-transparent pointer-events-none" />
 
       <div className="flex justify-end">
         {Array(2)
@@ -37,7 +37,7 @@ const Banner15 = () => {
                     <img
                       src={section.image.src}
                       alt={section.image.alt || "Image"}
-                      className="aspect-[3/2] h-16 max-h-24 object-cover md:h-auto transition-opacity duration-500"
+                      className="aspect-[3/2] h-[40px] max-h-24 object-cover md:h-auto transition-opacity duration-500"
                     />
                   </div>
                 </React.Fragment>
