@@ -1,18 +1,32 @@
 import { useTranslation } from "react-i18next";
-
+import Lottie from "react-lottie";
+import Partners from "../../public/lotties/kit online marketplace website in browser window.json";
+import Banner15 from "./Banner";
 export default function BusinessProfitable() {
     const { t, i18n } = useTranslation("landing"); // Ensure the namespace is correct
-
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: Partners,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
     // Determine if the current language is RTL
     const isRTL = i18n.language === "ar";
 
     return (
         <div
             id="company"
-            className={`min-h-[60vh] py-6 md:py-12 text-center flex flex-col justify-center items-center bg-yellow-50/70 dark:bg-black ${isRTL ? "rtl" : ""
+            className={`min-h-[60vh] py-5 md:py-6 text-center flex flex-col justify-center items-center bg-yellow-50/70 dark:bg-black ${isRTL ? "rtl" : ""
                 }`}
             dir={isRTL ? "rtl" : "ltr"} // Set direction attribute based on language
         >
+            <Lottie
+                options={defaultOptions}
+                height={"40%"}
+                width={"40%"}
+            />
             <div
                 className={`px-4 text-center   flex flex-col justify-center  ${isRTL ? "text-right" : "text-left"
                     }  max-w-[1000px] w-full`}
@@ -38,7 +52,7 @@ export default function BusinessProfitable() {
                     </div>
                 </div>
 
-
+                <Banner15 />
             </div>
         </div>
     );

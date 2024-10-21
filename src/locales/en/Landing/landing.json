@@ -4,33 +4,107 @@
   "cta_line_2": "Start Now",
   "hero_section": {
     "hero_heading": "Turning the Shopping Experience ",
-    "sub_heading_text": "into an Adventure",
     "description": "adding the fun into your daily life while saving on every purchase you do!",
     "cta": "Sign Up Now",
-    "button_lite_cta": "For Merchants",
-    "news_title": "Don't Miss Out",
-    "news_content": "Get exclusive offers for a limited time and start saving today!"
+    "button_lite_cta": "For Merchants"
   },
   "BusinessProfitable": {
-    "hero_heading": " Business ",
-    "sub_heading_text": "profitable partner",
-    "description": "In actus go we help business to succeed by delivering to best experience for shoppers , Develop winning strategies to keep ahead of the competition, adding the value business need, For more information, do not hesitate to contact us."
+    "hero_heading": " Business Deliver an exceptional experience and  ",
+    "sub_heading_text": "turn your customers into loyal fans",
+    "description": "Surprise your customers with personalized touches, seamless service, and meaningful engagement to foster long-term loyalty and advocacy"
   },
-  "challenges": [
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Explore the ACTUS App and Its Features",
+    "questions": [
+      {
+        "question": "What is the ACTUS app, and what does it offer?",
+        "answer": "The ACTUS app provides users with an engaging platform that rewards activities through points. Users can earn points by browsing offers, making purchases, participating in events, and engaging in mini-games. These points can be redeemed for rewards such as discount coupons, exclusive content, and profile customization."
+      },
+      {
+        "question": "How do I earn points and cash back in the ACTUS app?",
+        "answer": "There are several ways to earn points and cash back:\n\n• Browsing Offers: Spend 15 minutes exploring available offers to earn 15 points and receive cash back on your next purchase.\n• Event Participation: Join webinars, workshops, or company-hosted events to earn 500 points along with cash back.\n• Anniversary Quest: Make a purchase on your account anniversary to earn 300 points and enjoy cash back.\n• Challenges and Mini-Games: Participate in challenges or play mini-games to earn additional points and cash back for your engagement."
+      },
+      {
+        "question": "What rewards can I redeem using my points?",
+        "answer": "Users can redeem points for:\n\n• Discount Coupons (e.g., 5% discount for 1000 points)\n• Profile Customization with avatars and themes\n• Exclusive Content like tutorials and eBooks\n• Access to VIP events and exclusive products\n• Charitable Donations by converting points to donations"
+      },
+      {
+        "question": "How does the coupon sharing feature work?",
+        "answer": "With the ACTUS app, users can:\n\n• Share Coupons: Send coupons to other users on the map and split bills.\n• Track Requests: Accept or deny sharing requests from other users.\n• Navigate to Redemption Locations: Use route tracking to visit physical locations and redeem coupons."
+      },
+      {
+        "question": "What are clan and team activities in the ACTUS app?",
+        "answer": "Users can join or form clans, where they:\n\n• Upgrade Clan Features: Use points to unlock exclusive clan events and storage options.\n• Participate in Challenges: Compete in clan-specific competitions to win grand prizes.\n• Organize Trips and Events: Plan trips with clan members for fun and rewards."
+      },
+      {
+        "question": "How do map-based offers work?",
+        "answer": "The ACTUS app integrates a map feature that:\n\n• Detects your location and displays nearby brands offering discounts.\n• Displays popups with each brand’s highest discount.\n• Allows filtering of brands based on categories, such as food or retail.\n• Provides coupon details, including validity, discount type, and usage limits."
+      }
+    ]
+  },
+  "challenges": {
+    "tagline": "",
+    "heading": " How to Start Your Journey with Actus Go",
+    "description": "Sign up, explore fun activities, earn points, and unlock exciting rewards—all while saving on every purchase you make!",
+    "featureSections": [
+      {
+        "tagline": "Auth",
+        "heading": "Sign Up and Create Your Account",
+        "description": "Easily set up a new account using your email or social media credentials. Completing your profile helps us tailor offers and rewards to your preferences.",
+        "image": {
+          "src": "/public/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
+          "alt": "Relume placeholder image 1"
+        }
+      },
+      {
+        "tagline": "Explore",
+        "heading": "Explore Offers and Earn Points",
+        "description": "Dive into the available offers within the app. Participate in mini-games, challenges, and events hosted by Actus to maximize your points earnings.",
+        "image": {
+          "src": "/public/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
+          "alt": "Relume placeholder image 2"
+        }
+      },
+      {
+        "tagline": "Redeem",
+        "heading": "Redeem Points for Exciting Rewards and Cash Back",
+        "description": "Turn your earned points into exclusive discounts, profile customizations, and access to special content. Enjoy the rewards of your engagement!",
+        "image": {
+          "src": "https://via.placeholder.com/150",
+          "alt": "Relume placeholder image 3"
+        }
+      }
+    ]
+  },
+  "sectionsBanners": [
     {
-      "title": "Minimum Wage Issue",
-      "description": "The current minimum wage in Jordan, 260 JOD per month, is often insufficient to cover the cost of living, especially in urban areas like Amman.",
-      "icon": "CurrencyDollarIcon"
+      "title": "Invest Now!",
+      "image": {
+        "src": "/public/ActusGoLogo.png",
+        "alt": "Atus Go"
+      }
     },
     {
-      "title": "Lack of Luxury Spaces",
-      "description": "Life has become just work to meet basic needs, with a lack of luxury spaces for relaxation and leisure.",
-      "icon": "OfficeBuildingIcon"
+      "title": "Invest Now!",
+      "image": {
+        "src": "/public/ActusGoLogo.png",
+        "alt": "Atus Go"
+      }
     },
     {
-      "title": "Affordable Solutions",
-      "description": "Solutions are needed to provide basic needs at affordable prices.",
-      "icon": "LightBulbIcon"
+      "title": "Invest Now!",
+      "image": {
+        "src": "/public/ActusGoLogo.png",
+        "alt": "Atus Go"
+      }
+    },
+    {
+      "title": "Invest Now!",
+      "image": {
+     "src": "/public/ActusGoLogo.png",
+        "alt": "Atus Go"
+      }
     }
   ],
   "use_cases": {

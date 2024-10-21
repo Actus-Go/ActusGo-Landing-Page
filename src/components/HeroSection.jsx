@@ -1,92 +1,97 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+/* eslint-disable no-unused-vars */
+// import React from "react";
 import Button from "./Micros/button";
 import ButtonLite from "./Micros/ButtonLite";
 import { Link } from "react-router-dom";
 
-export default function Hero_2() {
-  const { t, i18n } = useTranslation("landing"); // Ensure the namespace is correct
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
+import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+import headerData from "../locales/HeaderData.js"; // Import the data
 
-  // Determine if the current language is RTL
-  const isRTL = i18n.language === "ar";
+const Header80 = (props) => {
+  const { t, i18n } = useTranslation("landing");
+  const isRTL = i18n.language === "ar"; // Detect if the current language is Arabic
+
+  // Choose the data object based on the current language
+  const { heading, description, images } = headerData[i18n.language] || headerData.en;
+
+  const transformRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: transformRef });
+  const animatedScrollYProgress = useSpring(scrollYProgress, { bounce: 0 });
+  const yFirst = useTransform(animatedScrollYProgress, [0, 1], ["0vh", "-87.5vh"]);
+  const ySecond = useTransform(animatedScrollYProgress, [0, 1], ["0vh", "-39.6vh"]);
 
   return (
-    <div
-      id="company"
-      className={`min-h-screen py-6 md:py-12 text-center flex flex-col justify-center items-center bg-yellow-50/70 dark:bg-black ${
-        isRTL ? "rtl" : ""
-      }`}
-      dir={isRTL ? "rtl" : "ltr"} // Set direction attribute based on language
+    <section
+      ref={transformRef}
+      className={clsx("relative h-[150vh] px-[5%] md:h-[300vh]", {
+        "text-right": isRTL, // Align text to the right for Arabic
+      })}
     >
-      <div
-        className={`px-4 text-center   flex flex-col justify-center  ${
-          isRTL ? "text-right" : "text-left"
-        }  max-w-[1000px] w-full`}
-      >
-        {/* News Section */}
-        <div
-          className={`p-2 flex flex-col items-center ${
-            isRTL ? "text-right" : "text-left"
-          } mb-8 md:mb-12`}
-        >
-          <a
-            href={"#"}
-            className={`flex flex-col items-center active:scale-95 duration-200 gap-1 text-md bg-yellow-400/10 shadow-gray-200/20 shadow-inner px-4 py-2 rounded-full min-w-[30px] dark:bg-yellow-400/20 dark:shadow-gray-700/20 ${
-              isRTL ? "text-right" : "text-left"
-            } w-full sm:w-auto`}
-          >
-            <span className={`dark:text-yellow-300 text-center font-bold `}>
-              {t("hero_section.news_title")}
-            </span>
-            <span
-              className={`dark:text-yellow-400/70 text-center text-black hover:underline duration-300 `}
-            >
-              {t("hero_section.news_content")}
-            </span>
-          </a>
+      <div className="sticky top-0 h-[100vh] container mx-auto overflow-hidden">
+        <div className="absolute bottom-0 left-0 top-0 z-10">
+          <motion.div className="flex flex-col gap-[26vw] pt-[70vh]" style={{ y: yFirst }}>
+            {images.slice(0, 4).map((image, index) => (
+              <div
+                key={index}
+                className={clsx("relative h-[35vw] pt-[120%] sm:h-auto", {
+                  "w-[30vw] md:w-[28vw] lg:w-[22vw]": index === 0,
+                  "left-[52vw] mt-[-46vw] lg:left-[58vw] lg:w-[22vw]": index === 1,
+                  "left-[4vw] mt-[-5vw] lg:w-[20vw]": index === 2,
+                  "left-[64vw] mt-[-45vw] lg:w-[18vw]": index === 3,
+                })}
+              >
+                <img src={image.src} alt={image.alt} className="absolute inset-0 object-cover" />
+              </div>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Heading Section */}
-        <div
-          className={`text-3xl text-center md:text-4xl lg:text-5xl xl:text-6xl font-semibold dark:text-gray-300 `}
-        >
-          <h1 className="text-center">
-            {t("hero_section.hero_heading")}{" "}
-            <span className="bg-gradient-to-r text-center from-yellow-700 to-blue-800 text-transparent bg-clip-text dark:from-yellow-500 dark:to-yellow-700">
-              {t("hero_section.sub_heading_text")}
-            </span>
-          </h1>
-          {/* Description Section */}
-          <div className="text-center justify-center w-full  flex">
-            <p
-              className={`text-gray-800 py-5 text-center text-base md:text-lg max-w-2xl dark:text-gray-400 `}
-            >
-              {t("hero_section.description")}
-            </p>
+        <motion.div className="absolute bottom-0 right-0 top-0 z-[-10]" style={{ y: ySecond }}>
+          <div className="flex flex-col gap-[26vw] pt-[70vh]">
+            {images.slice(4).map((image, index) => (
+              <div
+                key={index}
+                className={clsx("relative h-[35vw] pt-[120%] opacity-75 sm:h-auto", {
+                  "w-[28vw] lg:w-[20vw]": index === 0,
+                  "right-[50vw] mt-[-44vw] lg:right-[54vw] lg:w-[18vw]": index === 1,
+                })}
+              >
+                <img src={image.src} alt={image.alt} className="absolute inset-0 object-cover" />
+              </div>
+            ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Buttons Section */}
-        <div
-          className={`mt-8 flex flex-col gap-4 justify-center sm:flex-row sm:gap-8 items-center`}
-        >
-          <Link to="/Pricing">
-            <div className="flex-grow min-w-[200px] w-full h-16 max-w-64">
-              <Button
-                color="gray"
-                CTAtext={t("hero_section.cta")}
-                className="w-full animate-pulse"
-              />
+        {/* Main content centered vertically and horizontally */}
+        <div className="container relative flex h-full max-w-[1400px] items-center justify-center">
+          <div className="text-center">
+            <h1 className="mb-5 text-4xl font-bold dark:text-white md:text-6xl">{heading}</h1>
+            <p className="mb-8 dark:text-white/90">{description}</p>
+
+            <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-4">
+              <Link to="/Pricing">
+                <Button
+                  color="gray"
+                  CTAtext={t("hero_section.cta")}
+                  className="w-40 h-12    text-black  dark:text-black rounded">
+                  {t("hero_section.cta")}
+                </Button>
+              </Link>
+              <ButtonLite CTAtext={t("hero_section.button_lite_cta")}
+                className="w-[180px] h-12 border text-black border-gray-700 rounded">
+
+              </ButtonLite>
             </div>
-          </Link>
-          <div className="flex-grow min-w-[200px]  h-16 max-w-64">
-            <ButtonLite
-              CTAtext={t("hero_section.button_lite_cta")}
-              className="w-full"
-            />
           </div>
         </div>
+
+        <div className="absolute inset-0 -z-10 mt-[35rem] md:mt-[100vh]" />
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Header80;

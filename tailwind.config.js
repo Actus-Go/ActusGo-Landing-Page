@@ -6,11 +6,10 @@ module.exports = withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-
+    // "./node_modules/@relume_io/relume-ui/dist/**/*.{js,ts,jsx,tsx}",
     "node_modules/@lemonsqueezy/wedges/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class", // or 'media' for automatic dark mode based on user's system preference
-
+  presets: [require("@relume_io/relume-tailwind")],
   theme: {},
   plugins: [wedgesTW()],
 });
