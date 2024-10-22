@@ -1,6 +1,6 @@
 // src/components/Logo.js
-import LogoDark from "/public/images/logoDark.png";
-import LogoLight from "/public/images/logoLight.png";
+import LogoDark from "/images/logoDark.png";
+import LogoLight from "/images/logoLight.png";
 
 const Logo = () => (
   <a href="/" className="-m-1.5 p-1.5">

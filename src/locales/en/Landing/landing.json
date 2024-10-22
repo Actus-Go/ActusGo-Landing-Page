@@ -53,7 +53,7 @@
         "heading": "Sign Up and Create Your Account",
         "description": "Easily set up a new account using your email or social media credentials. Completing your profile helps us tailor offers and rewards to your preferences.",
         "image": {
-          "src": "/public/videos/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
+          "src": "/videos/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
           "alt": "Relume placeholder image 1"
         }
       },
@@ -62,7 +62,7 @@
         "heading": "Explore Offers and Earn Points",
         "description": "Dive into the available offers within the app. Participate in mini-games, challenges, and events hosted by Actus to maximize your points earnings.",
         "image": {
-          "src": "/public/videos/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
+          "src": "/videos/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
           "alt": "Relume placeholder image 2"
         }
       },
@@ -81,28 +81,28 @@
     {
       "title": "Join the Fun, Claim Your Prize!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "Join the Fun, Claim Your Prize!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "Join the Fun, Claim Your Prize!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "Join the Fun, Claim Your Prize!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     }

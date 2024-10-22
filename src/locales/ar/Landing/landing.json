@@ -53,7 +53,7 @@
         "heading": "سجل وأنشئ حسابك",
         "description": "قم بإعداد حساب جديد بسهولة باستخدام بريدك الإلكتروني أو بيانات الاعتماد الخاصة بالشبكات الاجتماعية. إكمال ملفك الشخصي يساعدنا على تخصيص العروض والمكافآت لتناسب تفضيلاتك.",
         "image": {
-          "src": "/public/videos/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
+          "src": "/videos/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
           "alt": "صورة مؤقتة لريلوم 1"
         }
       },
@@ -62,7 +62,7 @@
         "heading": "استكشاف العروض وكسب النقاط",
         "description": "استكشف العروض المتاحة داخل التطبيق. شارك في الألعاب المصغرة والتحديات والفعاليات التي تنظمها Actus لزيادة كسب النقاط.",
         "image": {
-          "src": "/public/videos/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
+          "src": "/videos/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
           "alt": "صورة مؤقتة لريلوم 2"
         }
       },
@@ -81,28 +81,28 @@
     {
       "title": "انضم إلى المرح واحصل على جائزتك!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "انضم إلى المرح واحصل على جائزتك!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "انضم إلى المرح واحصل على جائزتك!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     },
     {
       "title": "انضم إلى المرح واحصل على جائزتك!",
       "image": {
-        "src": "/public/images/ActusGoLogo.png",
+        "src": "/images/ActusGoLogo.png",
         "alt": "Atus Go"
       }
     }

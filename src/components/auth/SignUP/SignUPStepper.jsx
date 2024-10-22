@@ -1,5 +1,5 @@
 import SignupForm from './SignupForm';
-import fullImage from '/public/images/SplashA4.png'; // Update with your image path
+import fullImage from '/images/SplashA4.png'; // Update with your image path
 
 const SignupPage = () => {
   return (

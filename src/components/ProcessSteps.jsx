@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Auth from "/public/images/StepsLanding/Auth.png";
-import Deposit from "/public/images/StepsLanding/Deposit.png";
-import OTP from "/public/images/StepsLanding/OTP.png";
-import SendMessages from "/public/images/StepsLanding/SendMessages.png";
+import Auth from "/images/StepsLanding/Auth.png";
+import Deposit from "/images/StepsLanding/Deposit.png";
+import OTP from "/images/StepsLanding/OTP.png";
+import SendMessages from "/images/StepsLanding/SendMessages.png";
 function ProcessStep({ step, isReversed }) {
   const { t, i18n } = useTranslation("landing");
   const isRTL = i18n.dir() === "rtl";

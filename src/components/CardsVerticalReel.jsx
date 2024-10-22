@@ -46,13 +46,13 @@ function TrainingServiceSection() {
       badge: cards[1].badge,
       title: cards[1].title,
       description: cards[1].description,
-      media: { type: "video", src: "/public/videos/coworking-augmented-reality-mobile-app-in-retail.webm" }, // Video
+      media: { type: "video", src: "/videos/coworking-augmented-reality-mobile-app-in-retail.webm" }, // Video
     },
     {
       badge: cards[2].badge,
       title: cards[2].title,
       description: cards[2].description,
-      media: { type: "video", src: "/public/videos/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm" }, // Video
+      media: { type: "video", src: "/videos/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm" }, // Video
     },
   ];
 
