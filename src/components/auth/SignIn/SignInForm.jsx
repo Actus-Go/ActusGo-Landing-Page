@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { Box, Grid, Typography, Button } from "@mui/material";
-import { Input } from "@lemonsqueezy/wedges";
-import fullImage from "../../../assets/images/SplashA4.png"; // Update with your image path
+import { useState } from "react";
+import fullImage from "/images/SplashA4.png"; // Update with your image path
 import FormInput from "../SignUP/FormInput";
 
 const SignupPage = () => {

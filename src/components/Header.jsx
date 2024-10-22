@@ -1,7 +1,7 @@
 "use client";
 
-import LogoDark from "../assets/images/logoDark.png";
-import LogoLight from "../assets/images/logoLight.png";
+import LogoDark from "/public/images/logoDark.png";
+import LogoLight from "/public/images/logoLight.png";
 
 import { useState } from "react";
 import {

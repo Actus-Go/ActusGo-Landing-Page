@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Lottie from "react-lottie";
-import Prize from "../../public/lotties/kit loyalty program or affinity program.json";
+import Prize from "../assets/lotties/kit loyalty program or affinity program.json";
 import { useMediaQuery } from "@relume_io/relume-ui";
 import { useMotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";

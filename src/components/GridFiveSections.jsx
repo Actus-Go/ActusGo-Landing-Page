@@ -1,11 +1,10 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import Button from "./Micros/button";
-import unMiss from "../assets/images/5GridImages/unMiss.png";
-import fastTrans from "../assets/images/5GridImages/fastTrans.png";
-import CostEff from "../assets/images/3verticalCards/save.png";
-import reliable from "../assets/images/3verticalCards/availability.png";
-import advertising from "../assets/images/5GridImages/advertising.png";
+import unMiss from "/public/images/5GridImages/unMiss.png";
+import fastTrans from "/public/images/5GridImages/fastTrans.png";
+import CostEff from "/public/images/3verticalCards/save.png";
+import reliable from "/public/images/3verticalCards/availability.png";
+import advertising from "/public/images/5GridImages/advertising.png";
 
 
 const GridSection = () => {

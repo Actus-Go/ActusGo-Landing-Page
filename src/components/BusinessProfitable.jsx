@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Lottie from "react-lottie";
-import Partners from "../../public/lotties/kit online marketplace website in browser window.json";
+import Partners from "../assets/lotties/kit online marketplace website in browser window.json";
 import Banner15 from "./Banner";
 export default function BusinessProfitable() {
     const { t, i18n } = useTranslation("landing"); // Ensure the namespace is correct

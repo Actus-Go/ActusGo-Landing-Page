@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Lottie from "react-lottie";
-import analysisAnimation from "../../public/lotties/florid young woman wearing vr glasses.json"; // Lottie JSON file
+import analysisAnimation from "../assets/lotties/florid young woman wearing vr glasses.json"; // Lottie JSON file
 
 const Badge = ({ text }) => (
   <div className="badge w-fit mx-auto text-black dark:text-white/70 rounded-lg border-2 border-black/40 dark:border-yellow-400/40 dark:border-gray-600 px-2 py-1">
@@ -46,13 +46,13 @@ function TrainingServiceSection() {
       badge: cards[1].badge,
       title: cards[1].title,
       description: cards[1].description,
-      media: { type: "video", src: "/public/coworking-augmented-reality-mobile-app-in-retail.webm" }, // Video
+      media: { type: "video", src: "/public/videos/coworking-augmented-reality-mobile-app-in-retail.webm" }, // Video
     },
     {
       badge: cards[2].badge,
       title: cards[2].title,
       description: cards[2].description,
-      media: { type: "video", src: "/public/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm" }, // Video
+      media: { type: "video", src: "/public/videos/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm" }, // Video
     },
   ];
 

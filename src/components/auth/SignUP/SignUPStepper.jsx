@@ -1,8 +1,5 @@
-import React from 'react';
 import SignupForm from './SignupForm';
-import { Box, Grid, Typography, Button } from '@mui/material';
-import { Input } from "@lemonsqueezy/wedges";
-import fullImage from '../../../assets/images/SplashA4.png'; // Update with your image path
+import fullImage from '/public/images/SplashA4.png'; // Update with your image path
 
 const SignupPage = () => {
   return (
