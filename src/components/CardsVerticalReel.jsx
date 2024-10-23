@@ -59,14 +59,14 @@ function TrainingServiceSection() {
   return (
     <div
       className="w-full min-h-screen max-w-[1400px]  flex flex-col gap-8 text-white dark:text-gray-300"
-      id="marketplace"
+      id="WhyUs"
     >
       <div className="head px-3 container mx-auto flex flex-col gap-7 justify-center text-center max-w-[800px] pt-5">
         <h1 className="text-2xl font-medium text-yellow-800 uppercase dark:text-yellow-400">
           {t("use_cases.section.content.0.badge")}
         </h1>
 
-        <h1 className="text-4xl capitalize font-semibold text-black dark:text-white">
+        <h1 className="md:text-6xl text-4xl  capitalize font-semibold text-black dark:text-white">
           {t("use_cases.section.content.1.text")}
           <span className="bg-gradient-to-r from-yellow-600 to-blue-500 text-transparent bg-clip-text dark:from-yellow-400 dark:to-blue-800">
             {t("use_cases.section.content.1.highlight")}
@@ -74,7 +74,7 @@ function TrainingServiceSection() {
           {t("use_cases.section.content.1.continue")}
         </h1>
 
-        <p className="text-gray-800 py-5 text-base dark:text-gray-400">
+        <p className="text-gray-800 py-5 text-xl dark:text-gray-400">
           {t("use_cases.section.content.1.discription")}
         </p>
       </div>

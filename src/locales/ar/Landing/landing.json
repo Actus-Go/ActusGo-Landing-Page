@@ -47,11 +47,11 @@
     "name": "ActusGo"
   },
   "nav": {
-    "products": "المنتجات",
-    "solution": "الحلول",
-    "developers": "المطورين",
-    "resources": "المصادر",
-    "pricing": "الأسعار",
+    "StartNow": "أبدأ الآن",
+    "WhyUs": "لماذا نحن",
+    "Discover": "استكشف",
+    "B2B": "الاعمال",
+    "FAQs": "الأسئلة الشائعة",
     "signIn": "تسجيل الدخول",
     "changeLanguage": "تغيير اللغة",
     "toggleMenu": "القائمة"

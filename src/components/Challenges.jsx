@@ -111,6 +111,7 @@ const FeatureSection = ({
                        grid grid-cols-1 md:grid-cols-2 items-stretch overflow-hidden 
                        border dark:border-[#47390e] border-border-primary bg-background-primary"
             style={{ scale }}
+            id="StartNow"
         >
             {/* Content Section */}
             <div

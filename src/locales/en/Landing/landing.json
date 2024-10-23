@@ -47,11 +47,11 @@
     "name": "ActusGo"
   },
   "nav": {
-    "products": "Products",
-    "solution": "Solution",
-    "developers": "Developers",
-    "resources": "Resources",
-    "pricing": "Pricing",
+    "StartNow": "Start Now",
+    "WhyUs": "Why Us",
+    "Discover": "Discover",
+    "B2B": "B2B",
+    "FAQs": "FAQs",
     "signIn": "Sign in",
     "changeLanguage": "Change language",
     "toggleMenu": "Toggle menu"

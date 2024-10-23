@@ -1,25 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Globe, Sun, Moon } from 'lucide-react'; // Import Sun and Moon icons
+import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from localStorage
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const { t, i18n } = useTranslation();
 
   const isRTL = i18n.language === 'ar';
 
-  // Scroll event listener for changing navbar background
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(offset > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -27,10 +22,9 @@ const Navbar = () => {
     };
   }, []);
 
-  // Apply the theme to the body element
   useEffect(() => {
     document.body.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('theme', theme); // Store theme in localStorage
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleMenu = () => {
@@ -49,25 +43,21 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { key: 'products', href: '#products' },
-    { key: 'solution', href: '#solution' },
-    { key: 'developers', href: '#developers' },
-    { key: 'resources', href: '#resources' },
-    { key: 'pricing', href: '#pricing' },
+    { key: 'StartNow', href: '#StartNow' },
+    { key: 'WhyUs', href: '#WhyUs' },
+    { key: 'Discover', href: '#Discover' },
+    { key: 'B2B', href: '#B2B' },
+    { key: 'FAQs', href: '#FAQs' },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all shadow-lg duration-300 ${scrolled ? 'bg-gray-900/80 backdrop-blur-md py-1' : 'bg-gray-900 py-3'
+    <nav className={`fixed top-0 w-full z-40 transition-all shadow-lg duration-300 ${scrolled ? 'bg-gray-900/80 backdrop-blur-md py-1' : 'bg-gray-900 py-3'
       }`}>
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
           <div className={`flex-shrink-0 flex items-center gap-2 transition-all duration-300 ${isOpen ? 'scale-90' : 'scale-100'
             }`}>
-            <span className={`font-bold text-white transition-all duration-300 ${isOpen ? 'text-xl' : 'text-2xl'
-              }`}>
-              {t('brand.name')}
-            </span>
             <div className={`transition-all duration-300 ${isOpen ? 'w-[40px]' : 'w-[50px]'
               }`}>
               <img
@@ -76,9 +66,13 @@ const Navbar = () => {
                 alt="Logo"
               />
             </div>
+            <span className={`font-semibold text-white transition-all duration-300 ${isOpen ? 'text-xl' : 'text-2xl'
+              }`}>
+              {t('brand.name')}
+            </span>
           </div>
 
-          {/* Central Navigation - Desktop */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 mx-8">
             {navItems.map((item) => (
               <a
@@ -91,7 +85,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right Section - Desktop */}
+          {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
             <button
               onClick={changeLanguage}
@@ -116,38 +110,34 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-white inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200"
-              aria-label={t('nav.toggleMenu')}
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-white p-2 hover:bg-gray-700 rounded-md transition-colors duration-200"
+            aria-label={t('nav.toggleMenu')}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
-        {/* Mobile Menu - Slides from right in LTR, left in RTL */}
+        {/* Mobile Menu Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 md:hidden z-50"
+            onClick={toggleMenu}
+          />
+        )}
+
+        {/* Mobile Menu Panel */}
         <div
-          className={`fixed z-[1000] top-0 bottom-0 w-72 bg-black transform transition-transform duration-300 ease-in-out md:hidden ${isRTL
-              ? `right-auto left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`
-              : `left-auto right-0 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`
+          className={`fixed top-0 bottom-0 w-72 bg-gray-900 z-50 transition-transform duration-300 ease-in-out md:hidden ${isRTL
+            ? `right-auto left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`
+            : `left-auto right-0 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`
             }`}
-          style={{
-            boxShadow: isOpen
-              ? isRTL
-                ? '4px 0 15px rgba(0,0,0,0.3)'
-                : '-4px 0 15px rgba(0,0,0,0.3)'
-              : 'none'
-          }}
         >
-          <div className="flex flex-col relative z-[1000] h-full">
+          <div className="flex flex-col h-full">
             {/* Mobile Menu Header */}
-            <div className={`flex p-4 ${isRTL ? 'justify-start' : 'justify-start'}`}>
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <span className="text-white font-semibold">{t('brand.name')}</span>
               <button
                 onClick={toggleMenu}
                 className="text-white p-2 hover:bg-gray-700 rounded-md"
@@ -157,12 +147,12 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Items */}
-            <div className={`flex ${isRTL ? 'items-start' : 'items-start'} flex-col flex-1 px-4`}>
+            <div className="flex-1 bg-black py-4">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   to={item.href}
-                  className="text-white py-3 hover:bg-gray-700 rounded-md px-4 transition-colors duration-200"
+                  className="block text-white px-4 py-3 hover:bg-gray-700 transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   {t(`nav.${item.key}`)}
@@ -171,18 +161,14 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Footer */}
-            <div className="p-4 border-t border-gray-700">
-              <div className={`flex ${isRTL ? 'items-end' : 'items-start'}`}>
-
-                <button
-                  onClick={changeLanguage}
-                  className={`w-full text-white flex items-center px-4 py-3 hover:bg-gray-700 rounded-md mb-4 transition-colors duration-200`}
-                >
-                  <Globe className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                  {isRTL ? 'English' : 'العربية'}
-                </button>
-
-              </div>
+            <div className="p-4 border-t border-gray-700 space-y-4">
+              <button
+                onClick={changeLanguage}
+                className="w-full flex items-center justify-center text-white px-4 py-3 hover:bg-gray-700 rounded-md transition-colors duration-200"
+              >
+                <Globe className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                {isRTL ? 'English' : 'العربية'}
+              </button>
 
               <button className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
                 {t('nav.signIn')}
@@ -190,15 +176,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        {/* Overlay for mobile menu */}
-        {isOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
-            onClick={toggleMenu}
-            style={{ zIndex: -1 }}
-          />
-        )}
       </div>
     </nav>
   );

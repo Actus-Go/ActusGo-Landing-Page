@@ -43,7 +43,7 @@ const GridSection = () => {
   return (
     <div
       className={`w-full px-4 flex flex-col min-h-screen max-w-[1400px] ${isRTL ? "text-start" : ""} justify-center items-center gap-8 dark:text-white text-black ${isRTL ? "rtl" : ""}`}
-      id="features"
+      id="Discover"
       dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="container mx-auto flex flex-col gap-7 justify-center items-center text-center max-w-[800px] pt-5">

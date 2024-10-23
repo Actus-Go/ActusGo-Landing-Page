@@ -51,9 +51,10 @@ const FAQSection = () => {
                 isRTL ? 'text-right' : 'text-left'
             }`}
             dir={isRTL ? 'rtl' : 'ltr'}
+            id='FAQs'
         >
             <div className="flex flex-col justify-center items-center md:justify-start md:items-start gap-4 md:max-w-lg">
-                <p className="text-[#c6cc28] text-center font-bold text-lg">
+                <p className="text-[#c6cc28] md:text-start text-center font-bold text-lg">
                     {t('faq.title')}
                 </p>
                 <h2 className="text-3xl  text-center md:text-start max-w-[300px] dark:text-white font-bold mb-6">

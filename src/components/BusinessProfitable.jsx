@@ -17,7 +17,7 @@ export default function BusinessProfitable() {
 
     return (
         <div
-            id="company"
+            id="B2B"
             className={`min-h-[60vh] py-5 md:py-6 text-center flex flex-col justify-center items-center bg-yellow-50/70 dark:bg-black ${isRTL ? "rtl" : ""
                 }`}
             dir={isRTL ? "rtl" : "ltr"} // Set direction attribute based on language
