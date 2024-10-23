@@ -43,6 +43,19 @@
       }
     ]
   },
+  "brand": {
+    "name": "ActusGo"
+  },
+  "nav": {
+    "products": "Products",
+    "solution": "Solution",
+    "developers": "Developers",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "signIn": "Sign in",
+    "changeLanguage": "Change language",
+    "toggleMenu": "Toggle menu"
+  },
   "challenges": {
     "tagline": "",
     "heading": " How to Start Your Journey with Actus Go",

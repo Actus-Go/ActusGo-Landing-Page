@@ -43,6 +43,19 @@
       }
     ]
   },
+  "brand": {
+    "name": "ActusGo"
+  },
+  "nav": {
+    "products": "المنتجات",
+    "solution": "الحلول",
+    "developers": "المطورين",
+    "resources": "المصادر",
+    "pricing": "الأسعار",
+    "signIn": "تسجيل الدخول",
+    "changeLanguage": "تغيير اللغة",
+    "toggleMenu": "القائمة"
+  },
   "challenges": {
     "tagline": "",
     "heading": "كيفية بدء رحلتك مع Actus Go",

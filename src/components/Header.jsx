@@ -1,273 +1,207 @@
-"use client";
+import { useState, useEffect } from 'react';
+import { Menu, X, Globe, Sun, Moon } from 'lucide-react'; // Import Sun and Moon icons
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-import LogoDark from "/images/logoDark.png";
-import LogoLight from "/images/logoLight.png";
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Initialize theme from localStorage
+  const { t, i18n } = useTranslation();
 
-import { useState } from "react";
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+  const isRTL = i18n.language === 'ar';
 
-// Check if dark mode is enabled
-const isDarkMode = document.documentElement.classList.contains("dark");
-// Define navigation items
-const navItems = {
-  products: [
-    {
-      name: "Analytics",
-      description: "Get a better understanding of your traffic",
-      href: "#",
-      icon: ChartPieIcon,
-    },
-    {
-      name: "Engagement",
-      description: "Speak directly to your customers",
-      href: "#",
-      icon: CursorArrowRaysIcon,
-    },
-    {
-      name: "Security",
-      description: "Your customers’ data will be safe and secure",
-      href: "#",
-      icon: FingerPrintIcon,
-    },
-    {
-      name: "Integrations",
-      description: "Connect with third-party tools",
-      href: "#",
-      icon: SquaresPlusIcon,
-    },
-    {
-      name: "Automations",
-      description: "Build strategic funnels that will convert",
-      href: "#",
-      icon: ArrowPathIcon,
-    },
-  ],
-  callsToAction: [
-    { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-    { name: "Contact sales", href: "#", icon: PhoneIcon },
-  ],
-  otherLinks: [
-    { name: "Features", href: "#features" },
-    { name: "Marketplace", href: "#marketplace" },
-    { name: "Company", href: "#company" },
-    { name: "Log in", href: "#" },
-  ],
-};
+  // Scroll event listener for changing navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-// Desktop Menu Component
-const DesktopMenu = () => (
-  <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-    <Popover className="relative">
-      <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 dark:text-black text-white">
-        Product
-        <ChevronDownIcon
-          aria-hidden="true"
-          className="h-5 w-5 flex-none text-gray-400"
-        />
-      </PopoverButton>
+  // Apply the theme to the body element
+  useEffect(() => {
+    document.body.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme); // Store theme in localStorage
+  }, [theme]);
 
-      <PopoverPanel
-        transition
-        className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white dark:  shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-      >
-        <div className="p-4">
-          {navItems.products.map((item) => (
-            <div
-              key={item.name}
-              className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50  dark:hover:bg-yellow-100"
-            >
-              <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-900/40 dark:bg-yellow-400  ">
-                <item.icon
-                  aria-hidden="true"
-                  className="h-6 w-6 text-gray-600 dark:text-black"
-                />
-              </div>
-              <div className="flex-auto">
-                <a
-                  href={item.href}
-                  className="block font-semibold text-gray-900 dark:text-black"
-                >
-                  {item.name}
-                  <span className="absolute inset-0" />
-                </a>
-                <p className="mt-1 text-gray-600 dark:text-black">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 dark:bg-yellow-300">
-          {navItems.callsToAction.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 dark:text-black hover:bg-gray-100 dark:hover:bg-yellow-400"
-            >
-              <item.icon
-                aria-hidden="true"
-                className="h-5 w-5 flex-none text-gray-400 dark:text-black"
-              />
-              {item.name}
-            </a>
-          ))}
-        </div>
-      </PopoverPanel>
-    </Popover>
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? 'unset' : 'hidden';
+  };
 
-    {navItems.otherLinks.slice(0, -1).map((item) => (
-      <a
-        key={item.name}
-        href={item.href}
-        className="text-sm font-semibold leading-6 dark:text-black text-white"
-      >
-        {item.name}
-      </a>
-    ))}
-    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a
-        href={navItems.otherLinks[navItems.otherLinks.length - 1].href}
-        className="text-sm font-semibold leading-6 dark:text-black text-white"
-      >
-        {navItems.otherLinks[navItems.otherLinks.length - 1].name}{" "}
-        <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
-  </PopoverGroup>
-);
+  const changeLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'ar' : 'en';
+    i18n.changeLanguage(newLang);
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+  };
 
-// Mobile Menu Component
-const MobileMenu = ({ mobileMenuOpen, setMobileMenuOpen }) => (
-  <Dialog
-    open={mobileMenuOpen}
-    onClose={setMobileMenuOpen}
-    className="lg:hidden"
-  >
-    <div className="fixed inset-0 z-10" />
-    <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-      <div className="flex items-center justify-between">
-        <a href="/" className="-m-1.5 p-1.5">
-          <span className="sr-only">SMSInEgy</span>
-          <img alt="" src={LogoDark} className="h-8 w-auto dark:block hidden" />
-          <img alt="" src={LogoLight} className="h-8 w-auto dark:hidden" />
-        </a>
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(false)}
-          className="-m-2.5 rounded-md p-2.5 text-gray-700"
-        >
-          <span className="sr-only">Close menu</span>
-          <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-        </button>
-      </div>
-      <div className="mt-6 flow-root">
-        <div className="-my-6 divide-y divide-gray-500/10">
-          <div className="space-y-2 py-6">
-            <Disclosure as="div" className="-mx-3">
-              <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                Product
-                <ChevronDownIcon
-                  aria-hidden="true"
-                  className="h-5 w-5 flex-none group-data-[open]:rotate-180"
-                />
-              </DisclosureButton>
-              <DisclosurePanel className="mt-2 space-y-2">
-                {navItems.products
-                  .concat(navItems.callsToAction)
-                  .map((item) => (
-                    <DisclosureButton
-                      key={item.name}
-                      as="a"
-                      href={item.href}
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      {item.name}
-                    </DisclosureButton>
-                  ))}
-              </DisclosurePanel>
-            </Disclosure>
-            {navItems.otherLinks.slice(0, -1).map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-              >
-                {item.name}
-              </a>
-            ))}
-            <a
-              href={navItems.otherLinks[navItems.otherLinks.length - 1].href}
-              className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            >
-              {navItems.otherLinks[navItems.otherLinks.length - 1].name}
-            </a>
-          </div>
-        </div>
-      </div>
-    </DialogPanel>
-  </Dialog>
-);
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
-export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navItems = [
+    { key: 'products', href: '#products' },
+    { key: 'solution', href: '#solution' },
+    { key: 'developers', href: '#developers' },
+    { key: 'resources', href: '#resources' },
+    { key: 'pricing', href: '#pricing' },
+  ];
 
   return (
-    <header className="bg-black dark:bg-yellow-300">
-      <nav
-        aria-label="Global"
-        className="mx-auto flex max-w-[1400px] items-center justify-between p-6 lg:px-8"
-      >
-        <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">SMSInEgy</span>
-            <img
-              alt=""
-              src={LogoDark}
-              className="h-8 w-auto dark:block hidden"
-            />
-            <img alt="" src={LogoLight} className="h-8 w-auto dark:hidden" />
-          </a>
+    <nav className={`fixed top-0 w-full z-50 transition-all shadow-lg duration-300 ${scrolled ? 'bg-gray-900/80 backdrop-blur-md py-1' : 'bg-gray-900 py-3'
+      }`}>
+      <div className="max-w-[1400px] mx-auto px-4">
+        <div className="flex justify-between items-center">
+          {/* Logo Section */}
+          <div className={`flex-shrink-0 flex items-center gap-2 transition-all duration-300 ${isOpen ? 'scale-90' : 'scale-100'
+            }`}>
+            <span className={`font-bold text-white transition-all duration-300 ${isOpen ? 'text-xl' : 'text-2xl'
+              }`}>
+              {t('brand.name')}
+            </span>
+            <div className={`transition-all duration-300 ${isOpen ? 'w-[40px]' : 'w-[50px]'
+              }`}>
+              <img
+                className="max-w-[100%] rounded-2xl"
+                src="/public/images/ActusGoLogo.png"
+                alt="Logo"
+              />
+            </div>
+          </div>
+
+          {/* Central Navigation - Desktop */}
+          <div className="hidden md:flex items-center justify-center flex-1 mx-8">
+            {navItems.map((item) => (
+              <a
+                key={item.key}
+                href={item.href}
+                className="text-white hover:text-gray-300 px-4 transition-colors duration-200"
+              >
+                {t(`nav.${item.key}`)}
+              </a>
+            ))}
+          </div>
+
+          {/* Right Section - Desktop */}
+          <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+            <button
+              onClick={changeLanguage}
+              className="flex items-center text-white hover:text-gray-300 transition-colors duration-200"
+              aria-label={t('nav.changeLanguage')}
+            >
+              <Globe className="h-5 w-5 mr-1 rtl:ml-1" />
+              {isRTL ? 'English' : 'العربية'}
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              className="text-white hover:text-gray-300 transition-colors duration-200"
+              aria-label={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+            >
+              {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+            </button>
+
+            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+              {t('nav.signIn')}
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-white inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200"
+              aria-label={t('nav.toggleMenu')}
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
+
+        {/* Mobile Menu - Slides from right in LTR, left in RTL */}
+        <div
+          className={`fixed z-[1000] top-0 bottom-0 w-72 bg-black transform transition-transform duration-300 ease-in-out md:hidden ${isRTL
+              ? `right-auto left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`
+              : `left-auto right-0 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`
+            }`}
+          style={{
+            boxShadow: isOpen
+              ? isRTL
+                ? '4px 0 15px rgba(0,0,0,0.3)'
+                : '-4px 0 15px rgba(0,0,0,0.3)'
+              : 'none'
+          }}
+        >
+          <div className="flex flex-col relative z-[1000] h-full">
+            {/* Mobile Menu Header */}
+            <div className={`flex p-4 ${isRTL ? 'justify-start' : 'justify-start'}`}>
+              <button
+                onClick={toggleMenu}
+                className="text-white p-2 hover:bg-gray-700 rounded-md"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Mobile Menu Items */}
+            <div className={`flex ${isRTL ? 'items-start' : 'items-start'} flex-col flex-1 px-4`}>
+              {navItems.map((item) => (
+                <Link
+                  key={item.key}
+                  to={item.href}
+                  className="text-white py-3 hover:bg-gray-700 rounded-md px-4 transition-colors duration-200"
+                  onClick={toggleMenu}
+                >
+                  {t(`nav.${item.key}`)}
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Menu Footer */}
+            <div className="p-4 border-t border-gray-700">
+              <div className={`flex ${isRTL ? 'items-end' : 'items-start'}`}>
+
+                <button
+                  onClick={changeLanguage}
+                  className={`w-full text-white flex items-center px-4 py-3 hover:bg-gray-700 rounded-md mb-4 transition-colors duration-200`}
+                >
+                  <Globe className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                  {isRTL ? 'English' : 'العربية'}
+                </button>
+
+              </div>
+
+              <button className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+                {t('nav.signIn')}
+              </button>
+            </div>
+          </div>
         </div>
-        <DesktopMenu />
-        <MobileMenu
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-        />
-      </nav>
-    </header>
+
+        {/* Overlay for mobile menu */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 md:hidden"
+            onClick={toggleMenu}
+            style={{ zIndex: -1 }}
+          />
+        )}
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

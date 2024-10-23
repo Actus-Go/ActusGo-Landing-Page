@@ -119,11 +119,11 @@ const FeatureSection = ({
                     contentOrder
                 )}
             >
-                <p className="mb-2 font-bold">{tagline}</p>
-                <h2 className="mb-5 font-bold text-3xl leading-snug md:text-4xl lg:text-5xl">
+                <p className="mb-2 text-2xl font-semibold">{tagline}</p>
+                <h2 className="mb-5 font-semibold bg-gradient-to-r from-red-600 to-blue-500 text-transparent bg-clip-text dark:from-red-400 dark:to-blue-800 text-3xl leading-snug md:text-5xl ">
                     {heading}
                 </h2>
-                <p className="text-base text-black/80 dark:text-white/70 md:text-lg">
+                <p className=" text-black/80 dark:text-white/70 text-xl md:text-2xl">
                     {description}
                 </p>
             </div>

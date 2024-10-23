@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
-// import React from "react";
 import Button from "./Micros/button";
 import ButtonLite from "./Micros/ButtonLite";
 import { Link } from "react-router-dom";
-
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import clsx from "clsx";
@@ -20,8 +17,10 @@ const Header80 = (props) => {
   const transformRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: transformRef });
   const animatedScrollYProgress = useSpring(scrollYProgress, { bounce: 0 });
-  const yFirst = useTransform(animatedScrollYProgress, [0, 1], ["0vh", "-87.5vh"]);
-  const ySecond = useTransform(animatedScrollYProgress, [0, 1], ["0vh", "-39.6vh"]);
+
+  // Speed up the scrolling effect by adjusting the transform input range
+  const yFirst = useTransform(animatedScrollYProgress, [0, 0.4], ["0vh", "-87.5vh"]);
+  const ySecond = useTransform(animatedScrollYProgress, [0, 0.4], ["0vh", "-39.6vh"]);
 
   return (
     <section
@@ -72,18 +71,20 @@ const Header80 = (props) => {
             <p className="mb-8 dark:text-white/90">{description}</p>
 
             <div className="mt-6 flex flex-col md:flex-row items-center justify-center gap-4">
-              <Link to="/Pricing">
-                <Button
-                  color="gray"
-                  CTAtext={t("hero_section.cta")}
-                  className="h-12 w-[200px]  text-black  dark:text-black rounded">
-                  {t("hero_section.cta")}
-                </Button>
-              </Link>
-              <ButtonLite CTAtext={t("hero_section.button_lite_cta")}
-                className="w-[180px] h-12 border text-black border-gray-700 rounded">
-
-              </ButtonLite>
+              <div className="h-16 min-w-64">
+                <Link to="/Pricing">
+                  <Button
+                    color="gray"
+                    CTAtext={t("hero_section.cta")}
+                    className="h-12 w-[200px]  text-black  dark:text-black rounded"
+                  >
+                    {t("hero_section.cta")}
+                  </Button>
+                </Link>
+              </div>
+              <div className="h-16 min-w-64">
+                <ButtonLite CTAtext={t("hero_section.button_lite_cta")} className=" text-black border-gray-700 rounded" />
+              </div>
             </div>
           </div>
         </div>
