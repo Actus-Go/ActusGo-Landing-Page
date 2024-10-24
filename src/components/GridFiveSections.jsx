@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Button from "./Micros/button";
-import unMiss from "/images/5GridImages/unMiss.png";
-import fastTrans from "/images/5GridImages/fastTrans.png";
-import CostEff from "/images/3verticalCards/save.png";
-import reliable from "/images/3verticalCards/availability.png";
-import advertising from "/images/5GridImages/advertising.png";
+import unMiss from "/images/social-phone-and-joystick-with-level-up-text.png";
+import fastTrans from "/images/colors-goal-achievement-with-golden-trophy.png";
+import CostEff from "/images/glare-way-out-of-a-critical-situation-search-for-ideas-solution-in-the-maze-1.png";
+import reliable from "/images/neon-data-analytics-and-visualization-on-screen.png";
+import advertising from "/images/lounge-awards-against-the-background-of-the-growth-chart.png";
 
 
 const GridSection = () => {
@@ -79,7 +79,7 @@ const GridSection = () => {
           <a
             href="#"
             key={index}
-            className={`hover:scale-[1.03] cursor-pointer transition-all ${index <= 1 ? "col-span-2 lg:col-span-3" : "col-span-2"} overflow-hidden dark:bg-yellow-800/10 border-2 border-yellow-600/20 bg-yellow-100/60 rounded-3xl h-[375px] text-left flex flex-col justify-between`}
+            className={`hover:scale-[1.03] cursor-pointer transition-all ${index <= 1 ? "col-span-2 lg:col-span-3" : "col-span-2"} overflow-hidden dark:bg-yellow-800/10 border-2 border-yellow-600/20 bg-[#fbff7b] rounded-3xl h-[375px] text-left flex flex-col justify-between`}
           >
             <div className={`p-5 ${isRTL ? "text-start" : ""} flex flex-col gap-1`}>
               <h1 className={` text-2xl`}>{title}</h1>

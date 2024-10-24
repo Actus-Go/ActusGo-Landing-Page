@@ -78,7 +78,7 @@ const Navbar = () => {
               <a
                 key={item.key}
                 href={item.href}
-                className="text-white hover:text-gray-300 px-4 transition-colors duration-200"
+                className="text-white text-sm md:text-lg hover:text-gray-300 px-4 transition-colors duration-200"
               >
                 {t(`nav.${item.key}`)}
               </a>
@@ -129,15 +129,29 @@ const Navbar = () => {
 
         {/* Mobile Menu Panel */}
         <div
-          className={`fixed top-0 bottom-0 w-72 bg-gray-900 z-50 transition-transform duration-300 ease-in-out md:hidden ${isRTL
+          className={`fixed top-0 bottom-0 w-72 bg-gray-900 z-50 transition-transform duration-300 ease-in-out md:hidden h-screen ${isRTL
             ? `right-auto left-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`
             : `left-auto right-0 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`
-            }`}
+            } overflow-y-auto`}  // Ensures full height and scroll if needed
         >
           <div className="flex flex-col h-full">
             {/* Mobile Menu Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
-              <span className="text-white font-semibold">{t('brand.name')}</span>
+              <div className={`flex-shrink-0 flex items-center gap-2 transition-all duration-300 ${isOpen ? 'scale-90' : 'scale-100'
+                }`}>
+                <div className={`transition-all duration-300 ${isOpen ? 'w-[40px]' : 'w-[50px]'
+                  }`}>
+                  <img
+                    className="max-w-[100%] rounded-2xl"
+                    src="/public/images/ActusGoLogo.png"
+                    alt="Logo"
+                  />
+                </div>
+                <span className={`font-semibold text-white transition-all duration-300 ${isOpen ? 'text-xl' : 'text-2xl'
+                  }`}>
+                  {t('brand.name')}
+                </span>
+              </div>
               <button
                 onClick={toggleMenu}
                 className="text-white p-2 hover:bg-gray-700 rounded-md"
@@ -147,7 +161,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Items */}
-            <div className="flex-1 bg-black py-4">
+            <div className="flex-1 py-4">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
@@ -162,13 +176,23 @@ const Navbar = () => {
 
             {/* Mobile Menu Footer */}
             <div className="p-4 border-t border-gray-700 space-y-4">
-              <button
-                onClick={changeLanguage}
-                className="w-full flex items-center justify-center text-white px-4 py-3 hover:bg-gray-700 rounded-md transition-colors duration-200"
-              >
-                <Globe className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                {isRTL ? 'English' : 'العربية'}
-              </button>
+              <div className='flex gap-6 items-center'>
+
+                <button
+                  onClick={changeLanguage}
+                  className="w-fit flex items-center justify-center text-white px-4 py-3 hover:bg-gray-700 rounded-md transition-colors duration-200"
+                >
+                  <Globe className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                  {isRTL ? 'English' : 'العربية'}
+                </button>
+                <button
+                  onClick={toggleTheme}
+                  className="text-white hover:text-gray-300 transition-colors duration-200"
+                  aria-label={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+                >
+                  {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+                </button>
+              </div>
 
               <button className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
                 {t('nav.signIn')}
@@ -176,6 +200,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
       </div>
     </nav>
   );
