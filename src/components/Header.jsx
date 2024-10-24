@@ -62,7 +62,7 @@ const Navbar = () => {
               }`}>
               <img
                 className="max-w-[100%] rounded-2xl"
-                src="/public/images/ActusGoLogo.png"
+                src="/images/ActusGoLogo.png"
                 alt="Logo"
               />
             </div>
@@ -143,7 +143,7 @@ const Navbar = () => {
                   }`}>
                   <img
                     className="max-w-[100%] rounded-2xl"
-                    src="/public/images/ActusGoLogo.png"
+                    src="/images/ActusGoLogo.png"
                     alt="Logo"
                   />
                 </div>
@@ -176,7 +176,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Footer */}
             <div className="p-4 border-t border-gray-700 space-y-4">
-              <div className='flex gap-6 items-center'>
+              <div className='flex gap-6 justify-center items-center'>
 
                 <button
                   onClick={changeLanguage}
