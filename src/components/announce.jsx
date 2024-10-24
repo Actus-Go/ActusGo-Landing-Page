@@ -34,7 +34,7 @@ export function Announce() {
     <>
       {showAnnounce && (
         <div
-          className={`fixed top-4 right-4 left-4 md:left-auto md:right-6 bg-gray-900 text-white p-4 rounded-md shadow-md flex items-center justify-between ${
+          className={`fixed bottom-4 z-[1000] right-4 left-4 md:left-auto md:right-6 bg-gray-900 text-white p-4 rounded-md shadow-md flex items-center justify-between ${
             isRTL ? "rtl" : ""
           }`}
           dir={isRTL ? "rtl" : "ltr"}
