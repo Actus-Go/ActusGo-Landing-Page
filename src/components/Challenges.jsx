@@ -107,7 +107,7 @@ const FeatureSection = ({
 
     return (
         <Section
-            className="relative bg-[#fbff7b] dark:bg-[#191104] dark:text-white rounded-xl md:sticky md:top-[10%] md:mb-[10vh] md:h-[80vh] 
+            className="relative bg-[#fbff7b] dark:bg-[#191104] dark:text-white rounded-[1.75rem] md:sticky md:top-[10%] md:mb-[10vh] md:h-[80vh] 
                        grid grid-cols-1 md:grid-cols-2 items-stretch overflow-hidden 
                        border dark:border-[#47390e] border-border-primary bg-background-primary"
             style={{ scale }}

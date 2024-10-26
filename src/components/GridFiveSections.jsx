@@ -79,7 +79,7 @@ const GridSection = () => {
           <a
             href="#"
             key={index}
-            className={`hover:scale-[1.03] cursor-pointer transition-all ${index <= 1 ? "col-span-2 lg:col-span-3" : "col-span-2"} overflow-hidden dark:bg-yellow-800/10 border-2 border-yellow-600/20 bg-[#fbff7b] rounded-3xl h-[375px] text-left flex flex-col justify-between`}
+            className={`hover:scale-[1.03] cursor-pointer transition-all ${index <= 1 ? "col-span-2 lg:col-span-3" : "col-span-2"} overflow-hidden dark:bg-yellow-800/10 border-2 border-yellow-600/20 bg-[#fbff7b] rounded-[1.75rem] h-[375px] text-left flex flex-col justify-between`}
           >
             <div className={`p-5 ${isRTL ? "text-start" : ""} flex flex-col gap-1`}>
               <h1 className={` text-2xl`}>{title}</h1>

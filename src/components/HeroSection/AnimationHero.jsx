@@ -30,7 +30,7 @@ const Header80Animation = () => {
 
     return (
         <div className="h-[100vh] overflow-hidden">
-            <div className="absolute bottom-0 left-0 top-0 z-10">
+            <div className="absolute bottom-0 left-0 top-0 z-[10]">
                 <motion.div
                     className="flex flex-col gap-[18vw] md:pt-[90vh] pt-[30vh]"
                     style={{ y: useTransform(scrollYProgress, [0, 0.08], ["0vh", "-87.5vh"]) }}

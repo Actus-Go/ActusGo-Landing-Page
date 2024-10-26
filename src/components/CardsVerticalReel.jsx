@@ -83,7 +83,7 @@ function TrainingServiceSection() {
         {FullCardsData.map((card, index) => (
           <div
             key={index}
-            className="rounded-3xl min-h-[500px] overflow-hidden text-center p-5 flex flex-col gap-5 cursor-pointer transition-all hover:scale-[1.02] duration-300 border-2 border-black dark:bg-yellow-800/10 dark:border-yellow-600/20 bg-[#fbff7b]"
+            className="rounded-[1.75rem] min-h-[500px] overflow-hidden text-center p-5 flex flex-col gap-5 cursor-pointer transition-all hover:scale-[1.02] duration-300 border-2 border-black dark:bg-yellow-800/10 dark:border-yellow-600/20 bg-[#fbff7b]"
           >
             <div className="flex flex-col justify-between items-center">
               <Badge text={card.badge} />
