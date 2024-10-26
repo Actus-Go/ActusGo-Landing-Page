@@ -1,51 +1,68 @@
-import { useTranslation } from "react-i18next";
-import Hero from "../components/HeroSection";
-import CardsVerticalReel from "../components/CardsVerticalReel";
-// import ProcessSteps from "../components/ProcessSteps";
-import GridFiveSections from "../components/GridFiveSections";
-// import arrowl from "../assets/images/arrow.png";
-// import arrowr from "../assets/images/arrowr.png";
+import React, { Suspense } from "react";
+
+// Lazy load components
+import Hero from "../components/HeroSection/Hero";
+const CardsVerticalReel = React.lazy(
+  () => import("../components/CardsVerticalReel")
+);
+// const ProcessSteps = React.lazy(() => import("../components/ProcessSteps"));
+const GridFiveSections = React.lazy(
+  () => import("../components/GridFiveSections")
+);
 import Header from "../components/Header";
-import BusinessProfitable from "../components/BusinessProfitable";
-import Layout408 from "../components/Challenges";
-import Faq3 from "../components/FAQ";
+const BusinessProfitable = React.lazy(
+  () => import("../components/BusinessProfitable")
+);
+const Layout408 = React.lazy(() => import("../components/Challenges"));
+const Faq3 = React.lazy(() => import("../components/FAQ"));
+const AnimationHero = React.lazy(
+  () => import("../components/HeroSection/AnimationHero")
+);
 
 export default function App() {
-  const { t, i18n } = useTranslation("landing"); // Ensure the namespace is correct
-
-  // const heroObj = {
-  //   News: {
-  //     id: 3,
-  //     date: "2020-01-01",
-  //     content: t("hero_section.news_content"),
-  //     link: "#",
-  //   },
-  //   hero_heading: t("hero_section.hero_heading"),
-  //   sub_heading_text: t("hero_section.sub_heading_text"),
-  //   hero_highlighted_text: t("hero_section.hero_highlighted_text"),
-  //   description: t("hero_section.description"),
-  // };
-
   return (
-    <div className="min-h-screen dark:bg-black bg-[#f1f0ee] m-auto flex justify-center flex-col">
+    <div className="min-h-screen relative dark:bg-black bg-[#f1f0ee] m-auto flex justify-center flex-col">
       <Header />
-      <Hero />
+
+      <div className="relative">
+        <div className="absolute top-0">
+          <AnimationHero />
+        </div>
+        <Hero />
+      </div>
 
       <div className="flex justify-center m-auto">
-        <Layout408 />
+        <Suspense >
+          <Layout408 />
+        </Suspense>
       </div>
+
       <div className="flex justify-center m-auto">
-        <CardsVerticalReel />
+        <Suspense>
+          <CardsVerticalReel />
+        </Suspense>
       </div>
+
       {/* <div className="flex justify-center m-auto">
-        <ProcessSteps arrow={arrowl} arrowr={arrowr} />
+        <Suspense fallback={<div>Loading Process Steps...</div>}>
+          <ProcessSteps arrow={arrowl} arrowr={arrowr} />
+        </Suspense>
       </div> */}
-      <BusinessProfitable />
+
+      <Suspense>
+        <BusinessProfitable />
+      </Suspense>
+
       <div className="flex justify-center m-auto">
-        <GridFiveSections />
+        <Suspense>
+          <GridFiveSections />
+        </Suspense>
       </div>
+
       <div className="flex justify-center m-auto">
-        <Faq3  />
+        <Suspense >
+          <Faq3 />
+        </Suspense>
       </div>
     </div>
   );
