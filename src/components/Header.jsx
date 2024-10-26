@@ -104,9 +104,9 @@ const Navbar = () => {
               {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </button>
 
-            <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+            <a href='https://app.actusgo.com/' className="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
               {t('nav.signIn')}
-            </button>
+            </a> 
           </div>
 
           {/* Mobile Menu Button */}
@@ -194,9 +194,9 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <button className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+              <a href='https://app.actusgo.com/' className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
                 {t('nav.signIn')}
-              </button>
+              </a>
             </div>
           </div>
         </div>
