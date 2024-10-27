@@ -10,7 +10,6 @@ const Badge = ({ text }) => (
 
 function TrainingServiceSection() {
   const { t, i18n } = useTranslation("landing");
-  const isRTL = i18n.language === "ar";
   const cards = t("use_cases.section.cards", { returnObjects: true });
 
   // Dynamic Media Loader: Either Lottie or Video
@@ -24,15 +23,36 @@ function TrainingServiceSection() {
           preserveAspectRatio: "xMidYMid slice",
         },
       };
-      return <Lottie options={defaultOptions} height={"100%"} width={"100%"} />;
+
+      return (
+        <Lottie
+          options={defaultOptions}
+          height={"100%"}
+          width={"100%"}
+          onError={() => (
+            <img src={media.fallback} alt="Fallback" className="w-full h-full object-cover" />
+          )}
+        />
+      );
     } else if (media.type === "video") {
       return (
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          onError={() => (
+            <img src={media.fallback} alt="Fallback" className="w-full h-full object-cover" />
+          )}
+        >
           <source src={media.src} type="video/webm" />
           Your browser does not support the video tag.
         </video>
       );
     }
+    // Fallback to an image if media type is unknown
+    return <img src={media.fallback} alt="Fallback" className="w-full h-full object-cover" />;
   };
 
   const FullCardsData = [
@@ -40,25 +60,37 @@ function TrainingServiceSection() {
       badge: cards[0].badge,
       title: cards[0].title,
       description: cards[0].description,
-      media: { type: "lottie", src: analysisAnimation }, // Lottie animation
+      media: {
+        type: "lottie",
+        src: analysisAnimation, // Lottie animation
+        fallback: "/images/florid-young-woman-wearing-vr-glasses.png", // Fallback image for Lottie
+      },
     },
     {
       badge: cards[1].badge,
       title: cards[1].title,
       description: cards[1].description,
-      media: { type: "video", src: "/videos/coworking-augmented-reality-mobile-app-in-retail.webm" }, // Video
+      media: {
+        type: "video",
+        src: "/videos/coworking-augmented-reality-mobile-app-in-retail.webm", // Video
+        fallback: "/images/coworking-augmented-reality-mobile-app-in-retail.png" // Fallback image for Video
+      },
     },
     {
       badge: cards[2].badge,
       title: cards[2].title,
       description: cards[2].description,
-      media: { type: "video", src: "/videos/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm" }, // Video
+      media: {
+        type: "video",
+        src: "/videos/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone.webm", // Video
+        fallback: "/images/3d-isometric-mini-drone-with-package-landing-on-map-in-smartphone (1) (1) (1).png", // Fallback image for Video
+      },
     },
   ];
 
   return (
     <div
-      className="w-full min-h-screen max-w-[1400px]  flex flex-col gap-8 text-white dark:text-gray-300"
+      className="w-full min-h-screen max-w-[1400px] flex flex-col gap-8 text-white dark:text-gray-300"
       id="WhyUs"
     >
       <div className="head px-3 container mx-auto flex flex-col gap-7 justify-center text-center max-w-[800px] pt-5">
@@ -66,7 +98,7 @@ function TrainingServiceSection() {
           {t("use_cases.section.content.0.badge")}
         </h1>
 
-        <h1 className="md:text-6xl text-4xl  capitalize font-semibold text-black dark:text-white">
+        <h1 className="md:text-6xl text-4xl capitalize font-semibold text-black dark:text-white">
           {t("use_cases.section.content.1.text")}
           <span className="bg-gradient-to-r from-yellow-600 to-blue-500 text-transparent bg-clip-text dark:from-yellow-400 dark:to-blue-800">
             {t("use_cases.section.content.1.highlight")}

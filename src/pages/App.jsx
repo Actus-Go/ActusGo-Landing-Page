@@ -25,7 +25,7 @@ export default function App() {
       <Header />
 
       <div className="relative">
-        <div className="absolute top-0">
+        <div className="absolute max-w-[1500px] top-0">
           <AnimationHero />
         </div>
         <Hero />

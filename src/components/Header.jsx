@@ -106,7 +106,7 @@ const Navbar = () => {
 
             <a href='https://app.actusgo.com/' className="bg-white text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
               {t('nav.signIn')}
-            </a> 
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -175,8 +175,8 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Footer */}
-            <div className="p-4 border-t border-gray-700 space-y-4">
-              <div className='flex gap-6 justify-center items-center'>
+            <div className="p-4 flex justify-between gap-5 items-center  border-t border-gray-700 py-5">
+              <div className='flex gap-2  '>
 
                 <button
                   onClick={changeLanguage}
@@ -194,9 +194,12 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <a href='https://app.actusgo.com/' className="w-full bg-white text-gray-900 px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
-                {t('nav.signIn')}
-              </a>
+              <div className="w-full bg-white text-gray-900 text-center px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+
+                <a href='https://app.actusgo.com/' >
+                  {t('nav.signIn')}
+                </a>
+              </div>
             </div>
           </div>
         </div>

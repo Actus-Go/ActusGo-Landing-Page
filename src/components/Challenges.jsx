@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import Lottie from "react-lottie";
 import Prize from "../assets/lotties/kit loyalty program or affinity program.json";
+import fallbackImage from "/images/kit-loyalty-program-or-affinity-program.png";
 import { useMediaQuery } from "@relume_io/relume-ui";
 import { useMotionValue, motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
@@ -20,24 +21,20 @@ const calculateScales = (totalSections, scrollYProgress) => {
 };
 
 const Layout408 = (props) => {
-    const { t, i18n } = useTranslation("landing"); // Ensure the namespace is correct
-    const challenges = t("challenges", { returnObjects: true }); // Ensure this returns an object
-    const isRTL = i18n.language === "ar"; // Check if the current language is RTL
+    const { t, i18n } = useTranslation("landing");
+    const challenges = t("challenges", { returnObjects: true });
+    const isRTL = i18n.language === "ar";
 
-    // Destructure the properties
     const { tagline, heading, description, featureSections } = {
         ...challenges,
         ...props,
     };
-    // console.log(challenges);
 
     const containerRef = useRef(null);
-
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end 60%"],
     });
-
     const scales = calculateScales(featureSections.length, scrollYProgress);
 
     return (
@@ -59,7 +56,6 @@ const Layout408 = (props) => {
                     </p>
                 </div>
 
-                {/* Sticky Parent Grid */}
                 <div
                     ref={containerRef}
                     className="grid grid-cols-1 gap-10 md:gap-12"
@@ -70,7 +66,7 @@ const Layout408 = (props) => {
                             {...featureSection}
                             scale={scales[index]}
                             index={index}
-                            isLast={index === featureSections.length - 1} // Pass the isLast prop
+                            isLast={index === featureSections.length - 1}
                         />
                     ))}
                 </div>
@@ -86,7 +82,7 @@ const FeatureSection = ({
     image,
     scale,
     index,
-    isLast, // Destructure the isLast prop
+    isLast,
 }) => {
     const isMobile = useMediaQuery("(max-width: 767px)");
     const Section = isMobile ? "div" : motion.div;
@@ -95,6 +91,9 @@ const FeatureSection = ({
         !isMobile && index % 2 === 0 ? "order-first" : "order-last";
     const imageOrder =
         !isMobile && index % 2 === 0 ? "order-last" : "order-first";
+
+    const [showFallback, setShowFallback] = useState(false);
+    const [animationLoaded, setAnimationLoaded] = useState(false);
 
     const defaultOptions = {
         loop: true,
@@ -105,6 +104,17 @@ const FeatureSection = ({
         },
     };
 
+    useEffect(() => {
+        // Start a timeout to show the fallback image if animation doesn't load in time
+        const fallbackTimeout = setTimeout(() => {
+            if (!animationLoaded) {
+                setShowFallback(false);
+            }
+        }, 5000); // Adjust the timeout duration as needed
+
+        return () => clearTimeout(fallbackTimeout);
+    }, [animationLoaded]);
+
     return (
         <Section
             className="relative bg-[#fbff7b] dark:bg-[#191104] dark:text-white rounded-[1.75rem] md:sticky md:top-[10%] md:mb-[10vh] md:h-[80vh] 
@@ -113,7 +123,6 @@ const FeatureSection = ({
             style={{ scale }}
             id="StartNow"
         >
-            {/* Content Section */}
             <div
                 className={clsx(
                     "flex flex-col justify-center p-6 md:p-8 lg:p-12 ",
@@ -129,14 +138,29 @@ const FeatureSection = ({
                 </p>
             </div>
 
-            {/* Image or Lottie Section */}
             <div className={clsx("w-full h-full", imageOrder)}>
-                {isLast ? ( // Render Lottie animation only in the last card
-                    <Lottie
-                        options={defaultOptions}
-                        height={"90%"}
-                        width={"90%"}
-                    />
+                {isLast ? (
+                    showFallback ? (
+                        <img
+                            src={fallbackImage}
+                            alt="Fallback"
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <Lottie
+                            options={defaultOptions}
+                            height={"90%"}
+                            width={"90%"}
+                            eventListeners={[
+                                {
+                                    eventName: "complete",
+                                    callback: () => {
+                                        setAnimationLoaded(true);
+                                    },
+                                },
+                            ]}
+                        />
+                    )
                 ) : (
                     <video
                         autoPlay
@@ -144,6 +168,7 @@ const FeatureSection = ({
                         muted
                         playsInline
                         className="w-full h-full object-cover video-animation"
+                        poster={image.poster}
                     >
                         <source src={image.src} alt={image.alt} type="video/webm" />
                         Your browser does not support the video tag.

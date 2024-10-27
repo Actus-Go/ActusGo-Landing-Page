@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Button from "./Micros/button";
 import unMiss from "/images/social-phone-and-joystick-with-level-up-text.png";
-import fastTrans from "/images/colors-goal-achievement-with-golden-trophy.png";
-import CostEff from "/images/glare-way-out-of-a-critical-situation-search-for-ideas-solution-in-the-maze-1.png";
-import reliable from "/images/neon-data-analytics-and-visualization-on-screen.png";
-import advertising from "/images/lounge-awards-against-the-background-of-the-growth-chart.png";
+import fastTrans from "/images/Badges.png";
+import CostEff from "/images/Challenges.png";
+import reliable from "/images/Progress.png";
+import advertising from "/images/LeaderBoard.png";
 
 
 const GridSection = () => {

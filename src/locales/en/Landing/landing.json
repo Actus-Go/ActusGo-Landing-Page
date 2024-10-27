@@ -67,6 +67,7 @@
         "description": "Easily set up a new account using your email or social media credentials. Completing your profile helps us tailor offers and rewards to your preferences.",
         "image": {
           "src": "/videos/dynamic-man-working-in-online-support-service-via-laptop-1.webm",
+          "poster": "/images/dynamic-man-working-in-online-support-service-via-laptop-1 (1).png",
           "alt": "Relume placeholder image 1"
         }
       },
@@ -76,6 +77,7 @@
         "description": "Dive into the available offers within the app. Participate in mini-games, challenges, and events hosted by Actus to maximize your points earnings.",
         "image": {
           "src": "/videos/dynamic-young-man-choosing-the-best-offer-at-sale.webm",
+          "poster": "/images/dynamic-young-man-choosing-the-best-offer-at-sale (1).png",
           "alt": "Relume placeholder image 2"
         }
       },
