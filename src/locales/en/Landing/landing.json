@@ -13,6 +13,91 @@
     "sub_heading_text": "turn your customers into loyal fans",
     "description": "Surprise your customers with personalized touches, seamless service, and meaningful engagement to foster long-term loyalty and advocacy"
   },
+  "Testiemonials": {
+    "heading": "Customer testimonials",
+    "description": "users share how Actus Go enhances their everyday life with fun challenges, meaningful rewards, and unforgettable experiences—all while saving on every purchase.",
+    "leftTestimonials": [
+      {
+        "quote": "Exploring the world has never been this rewarding! Actus Go makes every journey unforgettable.",
+        "avatar": {
+          "src": "/images/Emily.png",
+          "alt": "User photo"
+        },
+        "name": "Emily Carter",
+        "position": "Adventure Seeker",
+        "companyName": "Wanderlust Travels",
+        "numberOfStars": 5
+      },
+      {
+        "quote": "Actus Go's challenges keep me engaged and I love the points system. Highly recommended!",
+        "avatar": {
+          "src": "/images/user2.png",
+          "alt": "User photo"
+        },
+        "name": "Liam Jones",
+        "position": "Frequent Traveler",
+        "companyName": "Global Adventures",
+        "numberOfStars": 4
+      },
+      {
+        "quote": "The app brings excitement to my daily routine with AR and rewards. It's a game-changer!",
+        "avatar": {
+          "src": "/images/user3.png",
+          "alt": "User photo"
+        },
+        "name": "Nour Ali",
+        "position": "Loyal User",
+        "companyName": "Savings Gurus",
+        "numberOfStars": 5
+      }
+    ],
+    "rightTestimonials": [
+      {
+        "quote": "Discovering local offers on the Actus Go map is super convenient. I save while having fun!",
+        "avatar": {
+          "src": "/images/Sophia.png",
+          "alt": "User photo"
+        },
+        "name": "Sophia Martinez",
+        "position": "Local Explorer",
+        "companyName": "Community Discounts",
+        "numberOfStars": 5
+      },
+      {
+        "quote": "The challenges make saving money exciting. It's a unique way to get discounts.",
+        "avatar": {
+          "src": "/images/james.png",
+          "alt": "User photo"
+        },
+        "name": "James Parker",
+        "position": "Gamer at Heart",
+        "companyName": "Play & Save",
+        "numberOfStars": 4
+      },
+      {
+        "quote": "Actus Go adds value to my purchases. I love the personalized offers and rewards!",
+        "avatar": {
+          "src": "/images/Person.png",
+          "alt": "User photo"
+        },
+        "name": "Layla Hassan",
+        "position": "Discount Enthusiast",
+        "companyName": "Smart Shopping",
+        "numberOfStars": 5
+      },
+      {
+        "quote": "Actus Go’s AR feature makes savings feel like an adventure. Highly innovative!",
+        "avatar": {
+          "src": "/images/Person.png",
+          "alt": "User photo"
+        },
+        "name": "Mason Chen",
+        "position": "Tech Savvy Shopper",
+        "companyName": "Digital Deals",
+        "numberOfStars": 5
+      }
+    ]
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Explore the ACTUS App and Its Features",

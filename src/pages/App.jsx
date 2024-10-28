@@ -18,6 +18,8 @@ const Faq3 = React.lazy(() => import("../components/FAQ"));
 const AnimationHero = React.lazy(
   () => import("../components/HeroSection/AnimationHero")
 );
+const Testimonial33 = React.lazy(() => import("../components/Testimonials"));
+
 
 export default function App() {
   return (
@@ -40,6 +42,12 @@ export default function App() {
       <div className="flex justify-center m-auto">
         <Suspense>
           <CardsVerticalReel />
+        </Suspense>
+      </div>
+
+      <div className="flex justify-center m-auto">
+        <Suspense>
+          <Testimonial33 />
         </Suspense>
       </div>
 
