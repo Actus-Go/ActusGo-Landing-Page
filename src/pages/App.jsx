@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { useTranslation } from 'react-i18next';
 
 // Lazy load components
 import Hero from "../components/HeroSection/Hero";
@@ -20,19 +21,20 @@ const AnimationHero = React.lazy(
 );
 const Testimonial33 = React.lazy(() => import("../components/Testimonials"));
 
+// const { t, i18n } = useTranslation('landing');
+// const isRTL = i18n.language === 'ar';
 
 export default function App() {
   return (
     <div className="min-h-screen relative dark:bg-black bg-[#f1f0ee] m-auto flex justify-center flex-col">
       <Header />
-
-      <div className="relative">
-        <div className="absolute max-w-[1500px] top-0">
+      <div className="relative w-full h-full">
+        <div className="absolute max-w-[1500px] top-0 left-0 right-0">
           <AnimationHero />
         </div>
         <Hero />
       </div>
-
+      
       <div className="flex justify-center m-auto">
         <Suspense >
           <Layout408 />

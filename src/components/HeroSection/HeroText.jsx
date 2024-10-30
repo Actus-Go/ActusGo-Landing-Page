@@ -6,11 +6,14 @@ import { useTranslation } from "react-i18next";
 import headerData from "/src/locales/HeaderData.js";
 
 const Header80Text = () => {
+  
   const { t, i18n } = useTranslation("landing");
+  const isRTL = i18n.language === 'ar';
   const { heading, description } = headerData[i18n.language] || headerData.en;
 
   return (
-      <div className="container relative flex h-full items-center justify-center">
+    <div className="container relative flex h-full items-center justify-center"
+      dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="text-center">
         <h1 className="mb-5 text-4xl font-bold dark:text-white md:text-6xl">{heading}</h1>
         <p className="mb-8 dark:text-white/90">{description}</p>

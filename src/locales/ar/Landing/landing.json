@@ -139,7 +139,13 @@
     "FAQs": "الأسئلة الشائعة",
     "signIn": "تسجيل الدخول",
     "changeLanguage": "تغيير اللغة",
-    "toggleMenu": "القائمة"
+    "toggleMenu": "القائمة",
+    "features": {
+      "title": "المميزات",
+      "ai": "الذكاء الاصطناعي",
+      "blockchain": "البلوكتشين",
+      "gamification": "الألعاب"
+    }
   },
   "challenges": {
     "tagline": "",

@@ -139,7 +139,13 @@
     "FAQs": "FAQs",
     "signIn": "Sign in",
     "changeLanguage": "Change language",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "features": {
+      "title": "Features",
+      "ai": "AI",
+      "blockchain": "Blockchain",
+      "gamification": "Gamification"
+    }
   },
   "challenges": {
     "tagline": "",

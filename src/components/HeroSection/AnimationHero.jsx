@@ -1,11 +1,20 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import headerData from "../../locales/HeaderData";
+// import headerData from "../../locales/HeaderData";
 
 const Header80Animation = () => {
-    const { i18n } = useTranslation("landing");
-    const { images } = headerData[i18n.language] || headerData.en;
+
+    const { t, i18n } = useTranslation('landing');
+    const isRTL = i18n.language === 'ar';
+    const images = [
+        { src: "/images/dynamic-sale-sign-pink.png", alt: "Image 1" },
+        { src: "/images/dynamic-search-window.png", alt: "Image 2" },
+        { src: "/images/dynamic-rectangle-yellow-1.png", alt: "Image 3" },
+        { src: "/images/dynamic-price-tag-on-rectangle-pink.png", alt: "Image 4" },
+        // { src: "/images/dynamic-arrow (1).png", alt: "Image 5" },
+        { src: "/images/dynamic-instagram-logo.png", alt: "Image 6" },
+    ]
 
     const { scrollYProgress } = useScroll();
     const animatedScrollYProgress = useSpring(scrollYProgress, { bounce: 0 });
@@ -29,7 +38,7 @@ const Header80Animation = () => {
     );
 
     return (
-        <div className="h-[100vh] max-w-[1500px] w-full mx-auto overflow-hidden">
+        <div className="h-[100vh] max-w-[1500px] w-full mx-auto overflow-hidden" dir={isRTL ? 'rtl' : 'ltr'}>
             <div className="absolute bottom-0 left-0 top-0 z-[10]">
                 <motion.div
                     className="flex transition-all max-w-full duration-500 flex-col gap-[18vw] md:pt-[90vh] pt-[30vh]"
