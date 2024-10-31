@@ -88,17 +88,76 @@ const Navbar = () => {
                 <div
                   onMouseEnter={() => setFeaturesOpen(true)}
                   onMouseLeave={() => setFeaturesOpen(false)}
-                  className="absolute top-full left-0 w-48 mt-2 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform opacity-100 scale-100"
+                  className="absolute top-full backdrop-blur-md w-[400px] left-[-100px] mt-6 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform opacity-100 scale-100"
                 >
-                  <Link to="/ai" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                    <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
-                  </Link>
-                  <Link to="/blockchain" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                    <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
-                  </Link>
-                  <Link to="/gamification" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                    <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
-                  </Link>
+                  <div className='flex w-full '>
+
+                    <div className=' border-r-[.5px] flex-1 py-3 px-3 border-gray-700 pr-2' >
+                      <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
+                        {t('nav.features.subTitle1')}
+                      </h3>
+
+                      <Link to="/ai" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                        <span>
+                          <Cpu className="h-6 w-6" />
+                        </span>
+                        <div className=" text-white/80 flex flex-col" >
+                          <p className=' text-white'>
+                            {t('nav.features.ai')}
+                          </p>
+                          <p className='text-[12px] '>
+                            {t('nav.features.aiDis')}
+
+                          </p>
+                        </div>
+                      </Link>
+                      <Link to="/blockchain" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                        <span>
+                          <Shield className="h-6 w-6" />
+                        </span>
+                        <div className=" text-white/80 flex flex-col" >
+                          <p className=' text-white'>
+                            {t('nav.features.blockchain')}
+                          </p>
+                          <p className='text-[12px] '>
+                            {t('nav.features.blockchainDis')}
+
+                          </p>
+                        </div>
+                      </Link>
+                      <Link to="/gamification" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                        <span>
+                          <Gamepad2 className="h-6 w-6" />
+                        </span>
+                        <div className=" text-white/80 flex flex-col" >
+                          <p className=' text-white'>
+                            {t('nav.features.gamification')}
+                          </p>
+                          <p className='text-[12px] '>
+                            {t('nav.features.gamificationDis')}
+
+                          </p>
+                        </div>
+                      </Link>
+
+
+                    </div>
+
+                    <div className='py-3 px-2 '>
+                      <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
+                        {t('nav.features.subTitle2')}
+                      </h3>
+                      <Link to="/ai" className="px-2 py-2 text-sm text-white rounded-xl hover:bg-gray-700 flex items-center gap-2">
+                        <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
+                      </Link>
+                      <Link to="/blockchain" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
+                        <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
+                      </Link>
+                      <Link to="/gamification" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
+                        <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -154,7 +213,7 @@ const Navbar = () => {
               ))}
 
               {/* Features Dropdown for Mobile */}
-              <div className="px-4 py-3">
+              <div className="px-4 py-3 relative">
                 <button
                   onClick={() => setFeaturesOpen(!featuresOpen)}
                   className="text-white flex items-center w-full rounded-md"
@@ -168,16 +227,77 @@ const Navbar = () => {
                   </span>
                 </button>
                 {featuresOpen && (
-                  <div className="mt-2 bg-gray-800 rounded-md overflow-hidden">
-                    <Link to="/ai" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                      <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
-                    </Link>
-                    <Link to="/blockchain" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                      <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
-                    </Link>
-                    <Link to="/gamification" className="px-4 py-2 text-sm text-white hover:bg-gray-700 flex items-center gap-2">
-                      <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
-                    </Link>
+                  <div
+                    className="absolute top-[20px] backdrop-blur-md left-[20px] mt-6 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform opacity-100 scale-100"
+                  >
+                    <div className='flex flex-col '>
+
+                      <div className=' border-r-[.5px] py-3 px-3 border-gray-700 pr-2' >
+                        <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
+                          {t('nav.features.subTitle1')}
+                        </h3>
+
+                        <Link to="/ai" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                          <span>
+                            <Cpu className="h-6 w-6" />
+                          </span>
+                          <div className=" text-white/80 flex flex-col" >
+                            <p className=' text-white'>
+                              {t('nav.features.ai')}
+                            </p>
+                            <p className='text-[12px] '>
+                              {t('nav.features.aiDis')}
+
+                            </p>
+                          </div>
+                        </Link>
+                        <Link to="/blockchain" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                          <span>
+                            <Shield className="h-6 w-6" />
+                          </span>
+                          <div className=" text-white/80 flex flex-col" >
+                            <p className=' text-white'>
+                              {t('nav.features.blockchain')}
+                            </p>
+                            <p className='text-[12px] '>
+                              {t('nav.features.blockchainDis')}
+
+                            </p>
+                          </div>
+                        </Link>
+                        <Link to="/gamification" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
+                          <span>
+                            <Gamepad2 className="h-6 w-6" />
+                          </span>
+                          <div className=" text-white/80 flex flex-col" >
+                            <p className=' text-white'>
+                              {t('nav.features.gamification')}
+                            </p>
+                            <p className='text-[12px] '>
+                              {t('nav.features.gamificationDis')}
+
+                            </p>
+                          </div>
+                        </Link>
+
+
+                      </div>
+
+                      <div className='py-3 px-2 '>
+                        <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
+                          {t('nav.features.subTitle2')}
+                        </h3>
+                        <Link to="/ai" className="px-2 py-2 text-sm text-white rounded-xl hover:bg-gray-700 flex items-center gap-2">
+                          <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
+                        </Link>
+                        <Link to="/blockchain" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
+                          <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
+                        </Link>
+                        <Link to="/gamification" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
+                          <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
