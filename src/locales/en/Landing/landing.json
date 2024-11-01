@@ -144,12 +144,16 @@
       "title": "Features",
       "subTitle1": "Explore",
       "subTitle2": "Features",
+      "subTitle2Disc": "Discover the exciting features of Actus Go",
+      "exploreNow": "Explore Now",
       "ai": "AI",
       "aiDis": "Learn more about AI",
       "blockchain": "Blockchain",
       "blockchainDis": "Learn more about Blockchain",
       "gamification": "Gamification",
-      "gamificationDis" : "Learn more about Gamification"
+      "gamificationDis": "Learn more about Gamification",
+      "Coupons": "Coupons",
+      "CouponsDis": "Learn more about Coupons"
     }
   },
   "challenges": {

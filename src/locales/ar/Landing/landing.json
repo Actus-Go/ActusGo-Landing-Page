@@ -132,19 +132,28 @@
     "name": "ActusGo"
   },
   "nav": {
-    "StartNow": "أبدأ الآن",
+    "StartNow": "ابدأ الآن",
     "WhyUs": "لماذا نحن",
-    "Discover": "استكشف",
-    "B2B": "الاعمال",
+    "Discover": "اكتشف",
+    "B2B": "من شركة إلى شركة",
     "FAQs": "الأسئلة الشائعة",
     "signIn": "تسجيل الدخول",
     "changeLanguage": "تغيير اللغة",
-    "toggleMenu": "القائمة",
+    "toggleMenu": "تبديل القائمة",
     "features": {
-      "title": "المميزات",
+      "title": "الميزات",
+      "subTitle1": "استكشاف",
+      "subTitle2": "الميزات",
+      "subTitle2Disc": "اكتشف الميزات المثيرة في Actus Go",
+      "exploreNow": "اكتشف الآن",
       "ai": "الذكاء الاصطناعي",
+      "aiDis": "تعرف على المزيد حول الذكاء الاصطناعي",
       "blockchain": "البلوكتشين",
-      "gamification": "الألعاب"
+      "blockchainDis": "تعرف على المزيد حول البلوكتشين",
+      "gamification": "الألعاب",
+      "gamificationDis": "تعرف على المزيد حول الألعاب",
+      "Coupons": "الكوبونات",
+      "CouponsDis": "تعرف على المزيد حول الكوبونات"
     }
   },
   "challenges": {

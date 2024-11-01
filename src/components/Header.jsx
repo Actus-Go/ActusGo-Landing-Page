@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Globe, Sun, Moon, ChevronDown, ChevronUp, Cpu, Shield, Gamepad2 } from 'lucide-react';
+import { Menu, X, Globe, Sun, Moon, ChevronDown, ChevronUp, Cpu, Shield, Gamepad2, TicketPercent, Binoculars } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -70,96 +70,81 @@ const Navbar = () => {
               </a>
             ))}
             {/* Features Tab on Desktop */}
-            <div className="relative group">
-              <button
-                onMouseEnter={() => setFeaturesOpen(true)}
-                onMouseLeave={() => setFeaturesOpen(false)}
-                className="text-white text-sm md:text-lg px-4 transition-colors duration-200 flex items-center"
-              >
+            <div
+              className="relative group"
+              onMouseEnter={() => setFeaturesOpen(true)}
+              onMouseLeave={() => setFeaturesOpen(false)}
+            >
+              <button className="text-white text-sm md:text-lg px-4 transition-colors duration-200 flex items-center">
                 {t('nav.features.title')}
                 <span
-                  className={`ml-1 transform transition-transform duration-300 ${featuresOpen ? 'rotate-180' : 'rotate-0'
-                    }`}
+                  className={`ml-1 transform transition-transform duration-300 ${featuresOpen ? 'rotate-180' : 'rotate-0'}`}
                 >
                   {featuresOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </span>
               </button>
-              {featuresOpen && (
-                <div
-                  onMouseEnter={() => setFeaturesOpen(true)}
-                  onMouseLeave={() => setFeaturesOpen(false)}
-                  className="absolute top-full backdrop-blur-md w-[400px] left-[-100px] mt-6 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform opacity-100 scale-100"
-                >
-                  <div className='flex w-full '>
 
-                    <div className=' border-r-[.5px] flex-1 py-3 px-3 border-gray-700 pr-2' >
-                      <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
-                        {t('nav.features.subTitle1')}
-                      </h3>
+              {/* Dropdown Section with Slide-down Animation */}
+              <div
+                className={`absolute top-full left-[-100px] mt-2 w-[450px] bg-gray-800 rounded-lg shadow-lg overflow-hidden backdrop-blur-md
+                    transition-all duration-300 ease-out transform ${featuresOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
+                onMouseEnter={() => setFeaturesOpen(true)}
+                onMouseLeave={() => setFeaturesOpen(false)}
+              >
+                <div className="flex w-full ">
+                  <div className="border-r-[.5px] flex flex-col gap-1 flex-1 py-3 px-1 border-gray-700 pr-2">
+                    <h3 className="text-white/80 px-2 text-[11px] font-semibold mb-2">
+                      {t('nav.features.subTitle1')}
+                    </h3>
 
-                      <Link to="/ai" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
-                        <span>
-                          <Cpu className="h-6 w-6" />
-                        </span>
-                        <div className=" text-white/80 flex flex-col" >
-                          <p className=' text-white'>
-                            {t('nav.features.ai')}
-                          </p>
-                          <p className='text-[12px] '>
-                            {t('nav.features.aiDis')}
+                    <Link to="/ai" className="px-2 py-1 text-white flex items-center rounded-xl hover:bg-gray-700 gap-3">
+                      <Cpu className="h-6 w-6" />
+                      <div className="text-white/80 flex flex-col">
+                        <p className="text-white">{t('nav.features.ai')}</p>
+                        <p className="text-[12px]">{t('nav.features.aiDis')}</p>
+                      </div>
+                    </Link>
 
-                          </p>
-                        </div>
-                      </Link>
-                      <Link to="/blockchain" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
-                        <span>
-                          <Shield className="h-6 w-6" />
-                        </span>
-                        <div className=" text-white/80 flex flex-col" >
-                          <p className=' text-white'>
-                            {t('nav.features.blockchain')}
-                          </p>
-                          <p className='text-[12px] '>
-                            {t('nav.features.blockchainDis')}
+                    <Link to="/blockchain" className="px-2 py-1 text-white flex items-center rounded-xl hover:bg-gray-700 gap-3">
+                      <Shield className="h-6 w-6" />
+                      <div className="text-white/80 flex flex-col">
+                        <p className="text-white">{t('nav.features.blockchain')}</p>
+                        <p className="text-[12px]">{t('nav.features.blockchainDis')}</p>
+                      </div>
+                    </Link>
 
-                          </p>
-                        </div>
-                      </Link>
-                      <Link to="/gamification" className="px-2 py-1  text-white flex items-center rounded-xl hover:bg-gray-700   gap-3">
-                        <span>
-                          <Gamepad2 className="h-6 w-6" />
-                        </span>
-                        <div className=" text-white/80 flex flex-col" >
-                          <p className=' text-white'>
-                            {t('nav.features.gamification')}
-                          </p>
-                          <p className='text-[12px] '>
-                            {t('nav.features.gamificationDis')}
+                    <Link to="/gamification" className="px-2 py-1 text-white flex items-center rounded-xl hover:bg-gray-700 gap-3">
+                      <Gamepad2 className="h-6 w-6" />
+                      <div className="text-white/80 flex flex-col">
+                        <p className="text-white">{t('nav.features.gamification')}</p>
+                        <p className="text-[12px]">{t('nav.features.gamificationDis')}</p>
+                      </div>
+                    </Link>
+                    <Link to="/couponsDis" className="px-2 py-1 text-white flex items-center rounded-xl hover:bg-gray-700 gap-3">
+                      <TicketPercent className="h-6 w-6" />
+                      <div className="text-white/80 flex flex-col">
+                        <p className="text-white">{t('nav.features.Coupons')}</p>
+                        <p className="text-[12px]">{t('nav.features.CouponsDis')}</p>
+                      </div>
+                    </Link>
+                  </div>
 
-                          </p>
-                        </div>
-                      </Link>
+                  <div className="py-3 px-3 max-w-[45%] flex-shrink">
+                    <h3 className="text-white/80 px-2 text-[11px] font-semibold mb-2">
+                      {t('nav.features.subTitle2')}
+                    </h3>
 
-
+                    <Link to="/ai" className="px-2 py-2 text-sm text-white rounded-xl hover:bg-gray-700 flex items-center gap-2">
+                      <Binoculars className="h-4 w-4" /> {t('nav.features.exploreNow')}
+                    </Link>
+                    <div className='w-full h-[150px] rounded-2xl p-1 bg-gray-700'>
+                      <img src="/images/simplistic-video-game-development-on-computer (1).png" alt="develpment" className='w-full h-full' />
                     </div>
+                    <p className="text-[12px] pt-1 text-white/80">{t('nav.features.subTitle2Disc')}</p>
 
-                    <div className='py-3 px-2 '>
-                      <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
-                        {t('nav.features.subTitle2')}
-                      </h3>
-                      <Link to="/ai" className="px-2 py-2 text-sm text-white rounded-xl hover:bg-gray-700 flex items-center gap-2">
-                        <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
-                      </Link>
-                      <Link to="/blockchain" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
-                        <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
-                      </Link>
-                      <Link to="/gamification" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
-                        <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
-                      </Link>
-                    </div>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
@@ -228,7 +213,7 @@ const Navbar = () => {
                 </button>
                 {featuresOpen && (
                   <div
-                    className="absolute top-[20px] backdrop-blur-md left-[20px] mt-6 bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-200 transform opacity-100 scale-100"
+                    className="absolute top-[20px] h-[200px] backdrop-blur-md left-[20px] mt-6 bg-gray-800 rounded-lg shadow-lg overflow-y-scroll transition-all duration-200 transform opacity-100 scale-100"
                   >
                     <div className='flex flex-col '>
 
@@ -279,23 +264,30 @@ const Navbar = () => {
                             </p>
                           </div>
                         </Link>
+                        <Link to="/couponsDis" className="px-2 py-1 text-white flex items-center rounded-xl hover:bg-gray-700 gap-3">
+                          <TicketPercent className="h-6 w-6" />
+                          <div className="text-white/80 flex flex-col">
+                            <p className="text-white">{t('nav.features.Coupons')}</p>
+                            <p className="text-[12px]">{t('nav.features.CouponsDis')}</p>
+                          </div>
+                        </Link>
 
 
                       </div>
 
-                      <div className='py-3 px-2 '>
-                        <h3 className='text-white/80 px-2 text-[11px] font-semibold mb-2'>
+                      <div className="py-3 px-3 ">
+                        <h3 className="text-white/80 px-2 text-[11px] font-semibold mb-2">
                           {t('nav.features.subTitle2')}
                         </h3>
+
                         <Link to="/ai" className="px-2 py-2 text-sm text-white rounded-xl hover:bg-gray-700 flex items-center gap-2">
-                          <Cpu className="h-4 w-4" /> {t('nav.features.ai')}
+                          <Binoculars className="h-4 w-4" /> {t('nav.features.exploreNow')}
                         </Link>
-                        <Link to="/blockchain" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
-                          <Shield className="h-4 w-4" /> {t('nav.features.blockchain')}
-                        </Link>
-                        <Link to="/gamification" className="px-2 py-2 text-sm rounded-xl text-white hover:bg-gray-700 flex items-center gap-2">
-                          <Gamepad2 className="h-4 w-4" /> {t('nav.features.gamification')}
-                        </Link>
+                        <div className='w-full h-[150px] rounded-2xl p-1 bg-gray-700'>
+                          <img src="/images/simplistic-video-game-development-on-computer (1).png" alt="develpment" className='w-full h-full' />
+                        </div>
+                        <p className="text-[12px] pt-1 text-white/80">{t('nav.features.subTitle2Disc')}</p>
+
                       </div>
                     </div>
                   </div>
@@ -321,7 +313,7 @@ const Navbar = () => {
                   {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
                 </button>
               </div>
-              <div className="w-full bg-white text-gray-900 text-center px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
+              <div className="w-full text-sm bg-white text-gray-900 text-center px-4 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-200">
                 <a href="https://app.actusgo.com/">{t('nav.signIn')}</a>
               </div>
             </div>
